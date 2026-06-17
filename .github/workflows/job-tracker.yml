@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       lookback_days:
-        description: Rolling publish-date window in days. Default is 60 for both initial backfill and weekly sync.
+        description: Rolling publish-date window in days. Weekly sync defaults to 7; use 60 for manual backfill when needed.
         required: false
-        default: "60"
+        default: "7"
   schedule:
     # 08:00 Monday Asia/Shanghai == 00:00 Monday UTC
     - cron: "0 0 * * 1"
@@ -19,7 +19,7 @@ jobs:
     env:
       TZ: Asia/Shanghai
       DISABLE_SYSTEM_PROXY: "1"
-      JOB_TRACKER_LOOKBACK_DAYS: "60"
+      JOB_TRACKER_LOOKBACK_DAYS: "7"
       RSS_TIMEOUT_SECONDS: "20"
       JOB_TRACKER_REGION_SCOPE: "asia_focus"
       JOB_TRACKER_LLM_MAX_JOBS: "2"
@@ -50,5 +50,5 @@ jobs:
 
       - name: Run job tracker
         env:
-          LOOKBACK_DAYS: ${{ inputs.lookback_days || '60' }}
+          LOOKBACK_DAYS: ${{ inputs.lookback_days || '7' }}
         run: python job_tracker.py --lookback-days "$LOOKBACK_DAYS"

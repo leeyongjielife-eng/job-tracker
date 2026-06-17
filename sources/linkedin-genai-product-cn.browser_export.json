@@ -1,0 +1,75 @@
+{
+  "task_id": "linkedin-genai-product-cn",
+  "task_name": "LinkedIn GenAI Product CN",
+  "query": "GenAI Product Manager",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=GenAI%20Product%20Manager&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Technical Product Manager, AI Systems",
+      "company": "A1",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/technical-product-manager-ai-systems-at-a1-4378773648?position=1&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=VQPwt4fZEbeM4b%2BkJSToBw%3D%3D",
+      "published_at": "2026-05-25"
+    },
+    {
+      "title": "Product Manager — GenAI & Cloud Platform",
+      "company": "Walmart Marketplace",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=2&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=vjP0joSe55tyBvpaH%2BjFCQ%3D%3D",
+      "published_at": "2026-03-23"
+    },
+    {
+      "title": "Agent平台产品/大模型平台产品",
+      "company": "Confidential",
+      "location": "中国",
+      "summary": "Real page summary: own a general AI Agent platform for multiple business teams, centered on workflow orchestration, tool calling, MCP integrations, knowledge base, RAG, memory, context management, model routing, agent evaluation, monitoring, safety controls, and platform reuse across enterprise scenarios.",
+      "link": "https://cn.linkedin.com/jobs/view/agent%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81-at-confidential-4422241669?position=3&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=OQQv%2FL5fv7bbiAzlzVIcTg%3D%3D",
+      "published_at": "2026-06-09"
+    },
+    {
+      "title": "Senior AI PO, CIB AI CoE",
+      "company": "渣打银行",
+      "location": "广州",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/senior-ai-po-cib-ai-coe-at-standard-chartered-4401874642?position=4&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=x%2FiwnWpBIMwaji%2BFvfMk0Q%3D%3D",
+      "published_at": "2026-04-16"
+    },
+    {
+      "title": "AI Product Manager - AI Router",
+      "company": "Confidential",
+      "location": "上海市, 中国",
+      "summary": "Real page summary: own an AI router and Multi-LLM platform focused on model aggregation, intelligent routing, token metering, commercialization controls, and infra-style platform delivery across high-concurrency AI traffic.",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422194924?position=5&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=aBcGiSAMzlq3pYtV3XNaYQ%3D%3D",
+      "published_at": "2026-06-02"
+    },
+    {
+      "title": "AI Product Owner",
+      "company": "施耐德电气",
+      "location": "上海市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376490908?position=6&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=G7DqFQ6RScZcnVaJaCglJw%3D%3D",
+      "published_at": "2026-02-25"
+    },
+    {
+      "title": "AI产品经理",
+      "company": "鼎捷软件股份有限公司",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E9%BC%8E%E6%8D%B7%E8%BD%AF%E4%BB%B6%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4406739647?position=7&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=I7e5L2MSrgYAX8JUxXvN2A%3D%3D",
+      "published_at": "2026-05-01"
+    },
+    {
+      "title": "AI Product Owner",
+      "company": "施耐德电气",
+      "location": "北京市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376487959?position=8&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=cK%2BNthyGv6oOGlMg2PpoPw%3D%3D",
+      "published_at": "2026-02-25"
+    }
+  ]
+}

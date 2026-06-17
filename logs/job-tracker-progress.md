@@ -1,0 +1,535 @@
+# Job Tracker Progress Log
+
+## 2026-06-10
+
+### Current Focus
+
+- [x] Create Python-based `job_tracker.py`
+- [x] Create weekly GitHub Actions workflow
+- [x] Create Feishu `Job Tracker -> Jobs` table
+- [x] Add `Company` and `Location` fields for grouping and deduplication
+- [x] Verify original RSS sources
+- [x] Confirm original `rss.app` / Google Alerts sources are not viable
+- [x] Probe public `Greenhouse` / `Lever` sources
+- [x] Run a fresh no-Gemini data quality test on the new sources
+- [ ] Decide whether the first source batch is good enough for production
+- [ ] Add more sources if the first batch is too sparse
+- [ ] Re-enable Gemini analysis after data quality is accepted
+- [x] Define quota rules to keep engineering roles as a supplement instead of the main pool
+- [x] Define location priority for duplicate roles across regions
+- [x] Switch relevance scoring from `1-3` to `0.0-1.0`
+
+### Git Snapshot
+
+Branch:
+
+```text
+main
+```
+
+Working tree highlights:
+
+- Modified: `.env.example`
+- Modified: `README.md`
+- Added: `.github/workflows/job-tracker.yml`
+- Added/updated: `docs/job-tracker.md`
+- Added: `job_tracker.py`
+- Added: `logs/job-tracker-progress.md`
+- Added: `skills/project-log/SKILL.md`
+- Added: `n8n/` assets from the earlier workflow migration work
+
+### Notes
+
+- Original 6 RSS sources were tested and produced no usable jobs:
+  - `rss.app` feeds returned `402 Payment Required`
+  - Google Alerts feeds timed out
+- Confirmed public job board APIs that are currently reachable:
+  - `Scale AI` via Greenhouse
+  - `Glean` via Greenhouse
+  - `Turing` via Greenhouse
+  - `PhysicsX` via Greenhouse
+  - `Rubrik` via Greenhouse
+  - `Databricks` via Greenhouse
+  - `Mistral AI` via Lever
+- Current plan is to use these stable public sources to validate data quality before turning Gemini back on.
+- Latest dry-run result with the new sources:
+  - First stable-source dry run: `processed_jobs = 12`
+  - Expanded-source dry run: `processed_jobs = 14`
+  - Companies now seen: `Databricks`, `Glean`, `Rubrik`, `Mistral AI`
+  - Current pool looks sufficient for the next phase; we do not need to keep expanding source count aggressively
+- Quota and prioritization rules agreed on:
+  - Engineering roles should remain a supplement, not the dominant pool
+  - Engineering role cap is enforced globally and per company
+  - Duplicate roles across locations should prefer `广东 > 浙江 > 江苏 > 上海 > 香港`
+- Current filtering preference agreed on:
+  - Keep PM / Program / Project / Ops roles as the core pool
+  - Keep some `AI Engineer`, `Applied AI Engineer`, `Agent Engineer`, and `Forward Deployed Engineer` roles
+  - Exclude `Technical Program Manager`
+- Relevance score spec was updated:
+  - Score range is now `0.0-1.0`
+  - `Program Manager` is not automatically scored below `Product Manager`
+  - `Public Sector / Defense / Clearance` roles should not be penalized because of prior government experience
+  - `Forward Deployed Engineer` roles should generally not exceed `0.75`
+  - `Applied AI Engineer` roles do not have an artificial cap
+- Gemini was successfully invoked once after key setup, but no further Gemini validation run is planned for now.
+
+## 2026-06-11
+
+### Current Focus
+
+- [x] Finish the last Feishu permission investigation
+- [x] Confirm app identity can `auth + read` but still cannot `write`
+- [x] Narrow the target job pool to Guangdong / Hangzhou / Shanghai / Hong Kong / Singapore
+- [x] Record the reason for switching the primary sink from Feishu to Notion
+- [x] Create Notion database under the `Job Tracker` page
+- [x] Switch the storage target from Feishu to Notion database
+- [x] Pull source definitions into a dedicated source catalog file
+- [x] Organize the first batch of China-facing target companies
+- [x] Split region filtering by source type
+- [x] Run a minimal Lagou integration test
+- [x] Create the first LinkedIn middle-layer script
+- [x] Connect LinkedIn middle-layer output into the main pipeline
+- [ ] Extract stable public listing endpoints for the first China company batch
+
+### Notes
+
+- Final Feishu conclusion:
+  - User identity can read and write the `Jobs` table
+  - App identity can authenticate and read records
+  - App identity still fails on record creation with `403 / 91403 / Forbidden`
+  - This blocks unattended GitHub Actions writes to Feishu
+- Because the remaining blocker is on Feishu platform-side app write permission rather than Python logic, the project will move the primary output target to `Notion database`.
+- A new Notion database named `Job Tracker Jobs` was created under the `Job Tracker` page for the migration target.
+- The Python script and GitHub Actions config are now being switched to `NOTION_API_KEY + NOTION_DATABASE_ID`.
+- Scope tightening decision recorded:
+  - Default region focus is now `广东 + 杭州 + 上海 + 香港 + 新加坡`
+  - `杭州` is kept as a single-city exception instead of keeping all Zhejiang roles
+  - `APAC / China-friendly remote` is no longer included as a global keep rule
+  - Default result pool should no longer keep broad U.S. / Europe / Australia local roles
+  - Company filtering should prioritize `中国 AI 公司` and `在华有团队的国际 AI 公司`
+  - An explicit company allowlist will remain available through environment configuration when the target company pool is ready
+- Location filter update:
+  - Platform-like sources (`拉勾 / Boss / LinkedIn / RSS`) now use strict region filtering
+  - Mainland roles on those sources only pass when they match `广东`, `杭州`, or `上海`
+  - Hong Kong and Singapore remain included
+  - `Greenhouse / Lever / 官网 careers / 官方招聘站` are no longer hard-filtered by the same strict region rule
+  - This adjustment was needed because the earlier global rule would have filtered out most current international public-board sources
+- Why the earlier version missed source layering:
+  - The earlier discussion was focused on locking the domestic geography first
+  - Region filtering was initially treated as one global rule
+  - Only after comparing that rule against the actual default source mix did it become obvious that domestic platforms and international ATS boards could not share the same hard filter
+- Original `LinkedIn + Google Alerts` sources were extracted from the n8n workflow JSON and are being merged back into the Python pipeline as supplemental sources instead of replacing the current careers-board sources.
+- After revalidation, the Google Alerts sources still timed out and are no longer considered suitable as default sources.
+- After revalidation, the LinkedIn `rss.app` feeds showed `402 Payment Required` and SSL EOF failures, so they are not reliable enough to serve as a core source layer.
+- Current conclusion: LinkedIn RSS can be retried only as a small optional experiment, but the main long-term source strategy should move toward more stable China-facing sources.
+- The default source list has now removed Google Alerts entirely.
+- The old LinkedIn `rss.app` feeds are now behind an explicit opt-in flag: `JOB_TRACKER_INCLUDE_EXPERIMENTAL_LINKEDIN=1`.
+- Gemini token-control mode was added:
+  - Default to analyze only new jobs already not present in Notion
+  - Default to cap Gemini calls per run
+  - Default to truncate long job descriptions before sending them to Gemini
+  - Lower-priority roles now fall back to heuristics instead of always consuming Gemini
+- Source catalog update:
+  - Default source definitions are now also managed in `sources/company_sources.json`
+  - The loader now ignores `enabled=false` entries, so we can track pending companies without making the weekly run unstable
+- First China-facing company batch status:
+  - `Moonshot AI`: official site and `careers.kimi.com` careers page confirmed
+  - `MiniMax`: official site and official Feishu recruiting site confirmed
+  - `01.AI`: official site and official Feishu recruiting site confirmed
+  - These three are now recorded in the source catalog as `investigating`, not active yet
+- Current integration rule:
+  - Only sources with stable public list extraction should move to `enabled=true`
+  - Official careers pages and official Feishu recruiting sites are preferred over third-party RSS wrappers
+- Lagou minimal-test conclusion:
+  - `lagou` source type support was added to the script
+  - A Lagou-only dry-run path and dedicated test source file were created
+  - Under the current no-login request flow, multiple queries returned `__NEXT_DATA__` successfully but `positionResult.result` stayed `0`
+  - This happened not only for narrow AI terms but also for broader terms like `产品经理`
+  - Current judgment: the blocker is no longer just keyword selection; the search response itself is not yielding usable results for this automation path
+  - Therefore Lagou should remain an experimental source for now, not a production default source
+- Lagou browser-state follow-up:
+  - Browser-state validation was attempted after the pure-request path failed
+  - In browser state, the page could expose job links, which is better than the pure-request result
+  - However, the Lagou search interaction was still unstable: query URLs could land on a generic shell page, Enter-based search could bounce back to `/wn/`, and button-driven search automation could time out
+  - Current conclusion: browser state is more promising than requests, but Lagou still does not meet the stability bar for the current weekly automation pipeline
+- LinkedIn middle-layer update:
+  - Added `linkedin_ingest.py` as a separate ingestion step
+  - Phase 1 output target is `linkedin_jobs.json`, not RSS
+  - Phase 1 currently supports:
+    - `manual_json` for stable local/browser-export style input
+    - `legacy_rss` as a temporary compatibility path
+  - This locks the normalized schema first so that future browser-state LinkedIn collection can plug into the same middle layer
+  - Browser-state LinkedIn extraction has now been connected into a real `manual_json` input file:
+    - `sources/linkedin_jobs_browser_export.json`
+  - The normalized middle-layer output has been regenerated from real browser-extracted input:
+    - `data/linkedin_jobs.json`
+  - The main `job_tracker.py` now supports `linkedin_json` as a formal source type
+  - `data/linkedin_jobs.json` can now flow through the main filtering, dedupe, quota, and analysis pipeline
+  - Dry-run validation against only the LinkedIn middle-layer source produced `5` retained jobs after the main pipeline filters
+  - The retained sample included:
+    - `Confidential` / `AI Product Manager - AI Router` / `上海市, 中国`
+    - `MiniMax` / `Product Manager` / `上海市, 中国`
+    - `RayNeo` / `AI Product Manager` / `深圳`
+    - `Walmart Marketplace` / `Product Manager — GenAI & Cloud Platform` / `深圳`
+    - `Wing Assistant` / `Product Manager, AI Solutions` / `上海市`
+  - A formal LinkedIn browser-search task catalog was added at `sources/linkedin_search_tasks.json`
+  - This clarifies the current gap between:
+    - `search coverage` = how many LinkedIn query URLs we intend to run
+    - `browser export sample size` = how many cards were actually exported into the intermediate JSON
+    - `processed_jobs` = how many jobs survived the main pipeline filters
+  - Current interpretation of the earlier `processed_jobs = 5` result:
+    - it came from one small browser-export batch
+    - not from the full set of configured LinkedIn search intents
+  - A formal browser-export spec was added at `sources/linkedin_browser_export_spec.json`
+  - Current agreed export scale:
+    - `AI Product Manager`: target 20 cards
+    - `Agent Product Manager`: target 20 cards
+    - `AI Operations`: target 10 cards
+  - Current agreed export schema:
+    - `title`, `company`, `location`, `summary`, `link`, `published_at`, `source`, `source_type`
+  - This locks the manual export contract before moving to the next LinkedIn expansion step
+
+## 2026-06-15
+
+### Current Focus
+
+- [x] Add `Applied AI Engineer` as a small engineering supplement pool
+- [x] Add `AI Product Operations` as an adjacent PM-support pool
+- [x] Confirm engineering roles remain a supplement instead of a dominant source
+- [x] Reconfirm the real GitHub Actions entry path for the project
+- [x] Confirm LinkedIn should become the default primary layer
+- [x] Build the first weekly LinkedIn refresh flow for grouped export + normalized input + freshness report
+- [ ] Retry Notion sync for the latest project decisions if the connector stabilizes
+
+### Notes
+
+- Current LinkedIn grouped export coverage:
+  - `AI Product Manager`: `10`
+  - `Agent Product Manager`: `20`
+  - `AI Operations`: `10`
+  - `GenAI Product Manager`: `8`
+  - `AI Platform Product Manager`: `8`
+  - `AI Product Operations`: `6`
+  - `Applied AI Engineer`: `6`
+  - `Agent Engineer`: `0`
+- After tightening generic PM filtering and adding the small engineering supplement pool, the latest LinkedIn-only dry-run retained `8` jobs.
+- When rerun with the real weekly window (`7` days), the current checked-in LinkedIn sample retained `0` jobs.
+- This confirms the current LinkedIn sample is useful for filter validation and backfill logic, but not fresh enough to serve as the weekly production input by itself.
+- The additional engineering pool did not overwhelm the shortlist; it contributed only a small number of potentially useful roles.
+- The production workflow file is located at workspace root:
+  - `.github/workflows/job-tracker.yml`
+- Important automation constraint:
+  - GitHub Actions can run `job_tracker.py`, but it does not automatically collect fresh LinkedIn browser-export data by itself.
+  - A first weekly refresh flow has now been formalized locally:
+    - update each `sources/<task-id>.browser_export.json`
+    - run `python3 linkedin_ingest.py --mode refresh_bundle`
+    - consume the refreshed `data/linkedin_jobs.json`
+  - This is now a repeatable semi-manual refresh process, but still not a full browser-automation refresh.
+- Source-layer decision update:
+  - LinkedIn Middle Layer is now the default primary source layer
+  - `Greenhouse / Lever / 官网` sources remain available as supplement layers, but are no longer mixed in by default
+  - Supplemental sources can be re-enabled explicitly with `JOB_TRACKER_INCLUDE_SUPPLEMENTAL_SOURCES=1`
+- Weekly refresh recovery update:
+  - Reconstructed the missing `linkedin-ai-product-manager-cn.browser_export.json` from the preserved browser-export sample
+  - After rerunning `linkedin_ingest.py --mode refresh_bundle`, the LinkedIn primary layer returned to `66` normalized jobs
+  - Current refresh report now shows:
+    - `missing_tasks = []`
+    - `empty_tasks = [linkedin-agent-engineer-cn]`
+    - `stale_tasks = [linkedin-ai-product-manager-cn, linkedin-ai-operations-cn, linkedin-ai-product-ops-cn]`
+- Current 7-day diagnostic:
+  - The primary issue is no longer missing LinkedIn source files
+  - The current issue is that the last `7` days only produced `5` recent LinkedIn records, and all `5` were filtered out by the current keep rules
+  - Rejected recent sample details:
+    - `A1 / Applied AI Engineer`: location empty, so it fails strict LinkedIn location filtering
+    - `莫仕公司 / Product Manager`: title too generic and location empty
+    - `Meitu Inc. / Senior Product Manager – AI Short Drama Tools`: Beijing location is currently outside the retained region scope
+    - `TE 中国 / PRODUCT MANAGER III`: Dongguan location is allowed, but the role has no AI signal so it fails generic PM tightening
+    - `Confidential / Agent平台产品/大模型平台产品`: title is relevant, but location empty so it fails strict LinkedIn location filtering
+- Input-quality update:
+  - The generic PM rule has now been relaxed to allow weak AI context signals
+  - However, the current LinkedIn browser-export samples still contain many empty `summary` fields
+  - This means the relaxed rule cannot show much effect yet, because weak AI context is often only visible in the card summary, snippet, or label text
+  - As a result, the weekly refresh spec was updated so future LinkedIn exports should capture summary text whenever visible, especially for generic PM titles
+- Convergence update:
+  - After testing inferred summary backfill, the 30-day pool expanded from `2` to `9` and the 7-day pool recovered from `0` to `1`
+  - This confirmed the relaxed generic-PM rule was working, but it also widened the pool enough to bring in some marginal non-AI product roles
+  - To reduce false positives, the AI strong-signal patterns were tightened again by removing overly broad terms such as `automation`, `intelligent`, and `智能`
+- Current intent is:
+  - keep explicit `AI / agent / model / GenAI / AI platform` signals strong
+  - allow narrow weak signals such as `AI tools`, `AI gateway`, `model platform`, `prompt`, `RAG`, `multimodal`
+  - avoid treating generic “intelligent/automation” wording as sufficient evidence on its own
+
+## 2026-06-16
+
+### Current Focus
+
+- [x] Re-run the current LinkedIn-only pipeline with the expanded `60`-day manual curation window
+- [x] Re-check the real `7`-day weekly window under the current rules
+- [x] Preserve LinkedIn search provenance in the middle-layer output
+- [x] Confirm why the latest `7`-day window still retains `0` jobs
+
+### Notes
+
+- Current dry-run status under the present rules:
+  - `60`-day manual curation window: `processed_jobs = 8`
+  - `7`-day weekly window: `processed_jobs = 0`
+- The `7`-day window is not empty because LinkedIn failed to surface new cards.
+  - The normalized middle layer currently contains `5` recent records.
+  - All `5` were filtered out by the current keep rules.
+- Root causes in the latest `7`-day sample:
+  - `莫仕公司 / Product Manager` came from `linkedin-agent-product-cn`, but both `location` and `summary` were empty.
+  - `TE 中国 / PRODUCT MANAGER III` came from `linkedin-agent-product-cn`, but the real JD shows no meaningful AI / agent / model-platform signal.
+  - `Confidential / Agent平台产品/大模型平台产品` came from `linkedin-genai-product-cn`, but both `location` and `summary` were empty.
+  - `Meitu Inc. / Senior Product Manager – AI Short Drama Tools` came from `linkedin-ai-platform-product-cn`, but Beijing remains outside the retained region scope.
+  - `A1 / Applied AI Engineer` came from `linkedin-applied-ai-engineer-cn`, but both `location` and `summary` were empty.
+- LinkedIn middle-layer improvement completed:
+  - `linkedin_ingest.py` now preserves:
+    - `source_task_id`
+    - `source_task_name`
+    - `source_query`
+    - `source_region`
+  - This makes it easier to trace each retained or rejected job back to the exact LinkedIn search entry that produced it.
+- Updated judgment for the current phase:
+  - The main blocker for weekly usefulness is no longer broad query coverage.
+  - The main blocker is incomplete browser-export card fields on the newest hits, especially missing `location` and `summary`.
+  - Therefore the next improvement should prioritize better refresh quality on a few productive LinkedIn searches rather than expanding source count.
+- Follow-up implementation result:
+  - Filled real-page `location` and `summary` back into:
+    - `Agent平台产品/大模型平台产品`
+    - `Applied AI Engineer`
+  - Created the first real export file for:
+    - `linkedin-ai-product-manager-zh-cn`
+  - Seeded it with:
+    - `AI产品经理-AI Router方向 / Confidential / 中国 / 2026-06-10`
+    - `产品经理-AI方向 / 翔傲信息科技（上海）有限公司 / 上海市 / 2026-06-15`
+- Chinese title filtering fix completed:
+  - `job_tracker.py` now formally treats `产品经理 / 高级产品经理 / 资深产品经理 / 产品负责人` as targetable PM titles, while still relying on AI context checks to avoid widening the pool blindly.
+- Latest verified rerun after rebuilding the LinkedIn middle layer serially:
+  - `60`-day manual curation window: `processed_jobs = 9`
+  - `7`-day weekly window: `processed_jobs = 1`
+- New recovered `7`-day keep sample:
+  - `翔傲信息科技（上海）有限公司 / 产品经理-AI方向 / 上海市`
+- Important debugging note:
+  - An intermediate `7d = 0` result happened because `linkedin_ingest.py --mode refresh_bundle` and `job_tracker.py --lookback-days 7` were run in parallel, so the tracker read the old `linkedin_jobs.json`.
+  - After rebuilding first and rerunning second in sequence, the correct result recovered to `7d = 1`.
+- Additional follow-up completed:
+  - Added the first real export file for `linkedin-agent-product-zh-cn`.
+  - Seeded it with:
+    - `沃尔玛(中国)投资有限公司 / AI智能体与低代码平台 产品负责人 / 深圳 / 2026-06-14`
+  - Evidence quality note:
+    - The visible LinkedIn page confirmed title, company, location, and freshness.
+    - The detailed JD body was still partially hidden behind LinkedIn login prompts, so this role is currently tracked as `watch` rather than a confirmed high-priority keep.
+- Latest verified rerun after this addition:
+  - `60`-day manual curation window: `processed_jobs = 10`
+  - `7`-day weekly window: `processed_jobs = 2`
+- Current recovered `7`-day pool:
+  - `翔傲信息科技（上海）有限公司 / 产品经理-AI方向 / 上海市`
+  - `沃尔玛(中国)投资有限公司 / AI智能体与低代码平台 产品负责人 / 深圳`
+- Additional follow-up completed:
+  - Added the first real export file for `linkedin-ai-platform-product-zh-cn`.
+  - Seeded it with:
+    - `平安健康保险股份有限公司 / 高级产品经理 / 深圳 / 2026-06-11`
+  - Real page evidence confirmed:
+    - company-level AI platform ownership
+    - large-model application support across business scenarios
+    - model evaluation, training, deployment, launch, and lifecycle management
+- Latest verified rerun after the Ping An addition:
+  - `60`-day manual curation window: `processed_jobs = 11`
+  - `7`-day weekly window: `processed_jobs = 3`
+- Current recovered `7`-day pool:
+  - `平安健康保险股份有限公司 / 高级产品经理 / 深圳`
+  - `翔傲信息科技（上海）有限公司 / 产品经理-AI方向 / 上海市`
+  - `沃尔玛(中国)投资有限公司 / AI智能体与低代码平台 产品负责人 / 深圳`
+- Additional follow-up completed:
+  - Added a strong 60-day Shenzhen sample:
+    - `ShopBack / Product Lead, AI-Native (Special Projects) / 深圳 / 2026-06-07`
+  - Real page evidence confirmed:
+    - first-party AI agents
+    - multi-agent systems
+    - LangGraph-based orchestration
+    - product discovery with merchant pain-point validation
+- Latest verified rerun after the ShopBack addition:
+  - `60`-day manual curation window: `processed_jobs = 12`
+  - `7`-day weekly window: `processed_jobs = 3`
+- Requirement model update confirmed with the user:
+  - `7` days should no longer be treated as the main publish-date filter.
+  - The intended model is:
+    - initial backfill = rolling `60` days
+    - weekly run = update frequency only
+    - each weekly run still scans the rolling `60`-day publish window
+    - storage layer keeps prior records and adds new jobs by link-deduped upsert
+- Config update completed:
+  - `job_tracker.py` default `lookback_days` is now `60`
+  - GitHub Actions default `lookback_days` input is now `60`
+  - workflow env `JOB_TRACKER_LOOKBACK_DAYS` is now `60`
+  - project `.env.example` now uses `JOB_TRACKER_LOOKBACK_DAYS=60`
+- Manual convergence action:
+  - Based on the `保留 / 观察 / 移除` review, inferred summaries for the removal group were withdrawn from the sample layer
+  - Removed inferred summaries from:
+    - `Booking.com / Product Manager -Marketplace`
+    - `塔吉特百货 / Product Manager` (Shenzhen + Shanghai variants)
+  - After this change, the current LinkedIn-only retained pool became:
+    - `30d = 7`
+    - `7d = 1`
+  - Current 30-day retained set:
+    - `Confidential / AI Product Manager - AI Router / 上海`
+    - `Kong / Senior Product Manager, AI Gateway / 上海`
+    - `Tata Communications / Senior Product Manager / 上海`
+    - `TE 中国 / PRODUCT MANAGER III / 东莞`
+    - `国泰航空 / Digital Product Manager / 深圳`
+    - `德马泰克 / Product Manager / 上海`
+    - `通用汽车 / Staff Product Manager – CIX / 上海`
+  - Current priority marking for the retained 30-day pool:
+    - `高优先`
+      - `Confidential / AI Product Manager - AI Router / 上海`
+      - `Kong / Senior Product Manager, AI Gateway / 上海`
+    - `观察`
+      - `通用汽车 / Staff Product Manager – CIX / 上海`
+      - `Tata Communications / Senior Product Manager / 上海`
+      - `TE 中国 / PRODUCT MANAGER III / 东莞`
+      - `国泰航空 / Digital Product Manager / 深圳`
+      - `德马泰克 / Product Manager / 上海`
+- Current project handoff artifacts:
+  - Curated candidate pool is now tracked in:
+    - `data/linkedin_curated_candidates.json`
+  - Candidate review packets are now tracked in:
+    - `data/linkedin_curated_review_packets.json`
+  - Remaining-work checklist is now tracked in:
+    - `docs/current-work-remaining.md`
+- High-priority verification update:
+  - `Confidential / AI Product Manager - AI Router / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - `Multi-LLM` aggregation
+    - intelligent routing
+    - token metering / billing
+    - AI routing platform / infra scope
+  - `Kong / Senior Product Manager, AI Gateway / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - `AI Gateway data plane`
+    - `LLM` and `agent` traffic routing
+    - control-plane / platform integration
+    - product ownership over AI connectivity infrastructure
+- Watchlist verification update:
+  - `通用汽车 / Staff Product Manager – CIX / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - `Intelligent Driving`
+    - `Intelligent Cockpit / HMI`
+    - `Connectivity / OnStar`
+    - export experience strategy and global platform integration
+  - Current judgment remains `观察` rather than `高优先` because the role appears closer to intelligent vehicle / connected experience product than to explicit AI / agent / model platform product
+  - `Tata Communications / Senior Product Manager / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - `Managed Enterprise Wi-Fi & LAN`
+    - product roadmap / go-to-market / pricing / profitability
+    - customer journey and business process transformation
+  - Current judgment has been changed from `观察` to `移除` because the JD is a telecom networking product role without clear AI / agent / model / AI-platform product scope
+  - `TE 中国 / PRODUCT MANAGER III / 东莞` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - `new product development`
+    - `manufacturing`
+    - `marketing`
+    - product strategy, business leadership, capacity planning, and sales/profit targets
+  - Current judgment has been changed from `观察` to `移除` because the JD is a standard manufacturing product role without clear AI / agent / model / AI-platform product scope
+  - `国泰航空 / Digital Product Manager / 深圳` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - Chinese Mainland digital product strategy
+    - `WeChat`
+    - travel/lifestyle customer journeys
+    - experimentation, KPI ownership, and cross-functional delivery
+  - Current judgment has been changed from `观察` to `移除` because the JD is a digital experience PM role without clear AI / agent / model / AI-platform product scope
+  - `德马泰克 / Product Manager / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - product line commercial ownership
+    - roadmap and lifecycle management
+    - product launches
+    - hardware, controls, and software integration
+  - Current judgment has been changed from `观察` to `移除` because the JD is a supply-chain / industrial product role without clear AI / agent / model / AI-platform product scope
+  - Chinese LinkedIn search-layer update:
+    - added a dedicated Chinese query layer to `sources/linkedin_search_tasks.json`
+    - added Chinese AI PM title recognition to `job_tracker.py`
+    - newly covered examples include `AI产品经理`, `Gen-AI产品经理`, `AIGC产品经理`, `大模型产品经理`, `智能体产品经理`, `AI平台产品经理`
+  - `上海瑞霖贸易有限公司 / Gen-AI产品经理 / 广州` was used as the first validation sample for the new Chinese layer
+  - Confirmed signals include:
+    - `LLM`
+    - `Agent`
+    - `multimodal`
+    - `Prompt Engineering`
+    - `RAG`
+    - `Dify / Coze`
+    - enterprise knowledge base / knowledge graph product delivery
+  - Current judgment is `保留 / 高优先`
+  - Manual lookback-window update:
+    - manual candidate curation window was expanded from `30` days to `60` days because the `30`-day pool had become too small
+    - weekly automation window remains `7` days
+  - Current `60`-day retained pool became `8` roles:
+    - `Confidential / AI Product Manager - AI Router / 上海`
+    - `Kong / Senior Product Manager, AI Gateway / 上海`
+    - `上海瑞霖贸易有限公司 / Gen-AI产品经理 / 广州`
+    - `RayNeo / AI Product Manager / 深圳`
+    - `Wing Assistant / Product Manager, AI Solutions / 上海`
+    - `WuXi Biologics/药明生物 / Agent AI Product Manager / 上海`
+    - `通用汽车 / Staff Product Manager – CIX / 上海`
+    - `Metaprise / AI Engineer / 深圳`
+  - The new `60`-day expansion surfaced four additional candidates that were outside the previous `30`-day window:
+    - `RayNeo / AI Product Manager / 深圳`
+    - `Wing Assistant / Product Manager, AI Solutions / 上海`
+    - `WuXi Biologics/药明生物 / Agent AI Product Manager / 上海`
+    - `Metaprise / AI Engineer / 深圳`
+  - `RayNeo / AI Product Manager / 深圳` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - AI productivity tools
+    - automated meeting minutes
+    - smart summaries and task tracking
+    - end-to-end lifecycle from `ASR` to `LLM` summarization
+    - familiarity with `GPT / Claude`
+  - Current judgment remains `保留 / 高优先`
+  - `Wing Assistant / Product Manager, AI Solutions / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - `M32 AI`
+    - `agentic AI`
+    - `0→1 AI products`
+    - rapid prototyping and user stories
+    - roadmap, market validation, and scalable product/ops systems
+  - Current judgment remains `保留 / 高优先`
+  - `WuXi Biologics/药明生物 / Agent AI Product Manager / 上海` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - AI-native products, platforms, workflows, and tools
+    - agent workflows and product architecture
+    - tool use, APIs, and data integrations
+    - `RAG`, observability, guardrails, and `HITL`
+    - rapid prototyping, evaluation design, and adoption loops
+  - Current judgment remains `保留 / 高优先`
+  - `Metaprise / AI Engineer / 深圳` now has a real page summary captured from the public LinkedIn job page
+  - Confirmed signals include:
+    - AI agent-powered financial operating system
+    - `LangChain / LangGraph`
+    - multi-agent systems
+    - `RAG`, vector retrieval, OCR, and multimodal document processing
+    - prompt engineering and ERP API integrations
+  - Current judgment remains `观察` rather than `高优先` because it belongs to the intentionally capped supplemental engineering pool
+  - Filtering-tightening update:
+    - weak AI context matching has been narrowed again by removing broad `workflow / tooling` hints
+    - this better matches the intended relaxed rule: keep weak-but-explicit AI signals like `AI tools`, `model platform`, `AI gateway`, `prompt`, `RAG`, `multimodal`
+  - Expanded the Chinese LinkedIn search layer with four new PM-oriented tasks:
+    - `LLM产品经理`
+    - `生成式AI产品经理`
+    - `Agent平台产品`
+    - `智能体平台产品`
+  - This change updates the formal weekly refresh catalog first; whether the 60-day pool grows immediately depends on whether new `.browser_export.json` files get generated for these tasks during the next LinkedIn refresh pass.
+  - Completed the first real browser-export pass for the newly added Chinese LinkedIn tasks:
+    - `linkedin-llm-product-zh-cn`: exported `8` jobs
+    - `linkedin-agent-platform-product-zh-cn`: exported `8` jobs
+    - `linkedin-generative-ai-product-zh-cn`: currently `0` jobs on this pass
+    - `linkedin-agentic-platform-product-zh-cn`: currently `0` jobs on this pass
+  - After ingest refresh:
+    - `linkedin_jobs.json` increased from `73` normalized jobs to `88`
+    - exported task count increased to `16 / 18`
+    - only `linkedin-aigc-product-zh-cn` and `linkedin-model-product-zh-cn` remain `missing`
+  - Important validation note:
+    - one earlier `processed_jobs = 12` result was stale because `linkedin_ingest.py --mode refresh_bundle` and `job_tracker.py` were run in parallel again
+    - rerunning `job_tracker.py` after refresh produced the correct current `60d` result: `processed_jobs = 16`
+  - The Chinese search-layer expansion added four net new kept roles into the current `60d` pool:
+    - `Agora / Product Manager / 上海市`
+    - `Confidential / AI产品经理 / 杭州`
+    - `Walmart Marketplace / Product Manager — GenAI & Cloud Platform / 深圳`
+    - `上海海能证券投资顾问有限公司 / AI大模型产品经理 / 上海市`

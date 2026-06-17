@@ -1,0 +1,36 @@
+{
+  "exports": [
+    {
+      "task_id": "linkedin-ai-product-manager-cn",
+      "task_name": "LinkedIn AI Product Manager CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": [
+        {
+          "title": "AI Product Manager",
+          "company": "Example AI Company",
+          "location": "上海市, 中国",
+          "summary": "Own AI product planning and agent workflow design.",
+          "link": "https://www.linkedin.com/jobs/view/1234567890/",
+          "published_at": "2026-06-11T09:00:00+08:00"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-agent-product-cn",
+      "task_name": "LinkedIn Agent Product CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": [
+        {
+          "title": "Agent Product Manager",
+          "company": "Example Agent Startup",
+          "location": "深圳, 中国",
+          "summary": "Drive agent platform roadmap and customer workflow integration.",
+          "link": "https://www.linkedin.com/jobs/view/2234567890/",
+          "published_at": "2026-06-10T10:00:00+08:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+name: Job Tracker
+
+on:
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: Rolling publish-date window in days. Default is 60 for both initial backfill and weekly sync.
+        required: false
+        default: "60"
+  schedule:
+    # 08:00 Monday Asia/Shanghai == 00:00 Monday UTC
+    - cron: "0 0 * * 1"
+
+jobs:
+  sync-jobs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      TZ: Asia/Shanghai
+      DISABLE_SYSTEM_PROXY: "1"
+      JOB_TRACKER_LOOKBACK_DAYS: "60"
+      RSS_TIMEOUT_SECONDS: "20"
+      JOB_TRACKER_REGION_SCOPE: "asia_focus"
+      JOB_TRACKER_LLM_MAX_JOBS: "2"
+      JOB_TRACKER_LLM_ONLY_NEW: "1"
+      JOB_TRACKER_GLM_REQUEST_INTERVAL_SECONDS: "3"
+      JOB_TRACKER_GLM_RETRY_BACKOFF_SECONDS: "5"
+      JOB_TRACKER_GLM_RATE_LIMIT_COOLDOWN_SECONDS: "30"
+      JOB_TRACKER_INCLUDE_SUPPLEMENTAL_SOURCES: "0"
+      GLM_MODEL: glm-4.5-flash
+      GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+      GLM_BASE_URL: ${{ secrets.GLM_BASE_URL }}
+      NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run job tracker
+        env:
+          LOOKBACK_DAYS: ${{ inputs.lookback_days || '60' }}
+        run: python job_tracker.py --lookback-days "$LOOKBACK_DAYS"

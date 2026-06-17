@@ -1,0 +1,72 @@
+[
+  {
+    "name": "LinkedIn AI Product Manager CN",
+    "query": "AI Product Manager",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn Agent Product CN",
+    "query": "Agent Product Manager",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn AI Ops CN",
+    "query": "AI Operations",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn GenAI Product CN",
+    "query": "GenAI Product Manager",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn AI Product Manager ZH CN",
+    "query": "AI产品经理",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn Gen-AI Product ZH CN",
+    "query": "Gen-AI产品经理",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn AIGC Product ZH CN",
+    "query": "AIGC产品经理",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn Model Product ZH CN",
+    "query": "大模型产品经理",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn Agent Product ZH CN",
+    "query": "智能体产品经理",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn AI Platform Product ZH CN",
+    "query": "AI平台产品经理",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn AI Platform Product CN",
+    "query": "AI Platform Product Manager",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn AI Product Ops CN",
+    "query": "AI Product Operations",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn Agent Engineer CN",
+    "query": "Agent Engineer",
+    "region": "China"
+  },
+  {
+    "name": "LinkedIn Applied AI Engineer CN",
+    "query": "Applied AI Engineer",
+    "region": "China"
+  }
+]

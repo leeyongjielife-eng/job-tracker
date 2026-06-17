@@ -1,0 +1,60 @@
+{
+  "exports": [
+    {
+      "task_id": "linkedin-ai-product-manager-cn",
+      "task_name": "LinkedIn AI Product Manager CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-agent-product-cn",
+      "task_name": "LinkedIn Agent Product CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-ai-operations-cn",
+      "task_name": "LinkedIn AI Ops CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-genai-product-cn",
+      "task_name": "LinkedIn GenAI Product CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-cn",
+      "task_name": "LinkedIn AI Platform Product CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-ai-product-ops-cn",
+      "task_name": "LinkedIn AI Product Ops CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-agent-engineer-cn",
+      "task_name": "LinkedIn Agent Engineer CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-applied-ai-engineer-cn",
+      "task_name": "LinkedIn Applied AI Engineer CN",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "jobs": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+title:
+company:
+location:
+published_at:
+link:
+summary:
+  # 尽量写职位卡片上的一句简介，尤其是 AI / agent / copilot / model platform / workflow / prompt / RAG / multimodal / inference 相关词
+
+title:
+company:
+location:
+published_at:
+link:
+summary:
+  # 如果标题只是泛 PM，但卡片里能看出 AI 语境，这里一定补上

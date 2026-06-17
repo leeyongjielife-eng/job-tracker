@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Lagou AI Product Manager Shenzhen",
+    "type": "lagou",
+    "keyword": "AI产品经理",
+    "city": "深圳",
+    "priority": 66,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  },
+  {
+    "name": "Lagou AI Product Manager Guangzhou",
+    "type": "lagou",
+    "keyword": "AI产品经理",
+    "city": "广州",
+    "priority": 66,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  },
+  {
+    "name": "Lagou AI Product Manager Hangzhou",
+    "type": "lagou",
+    "keyword": "AI产品经理",
+    "city": "杭州",
+    "priority": 66,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  },
+  {
+    "name": "Lagou AI Product Manager Shanghai",
+    "type": "lagou",
+    "keyword": "AI产品经理",
+    "city": "上海",
+    "priority": 66,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  },
+  {
+    "name": "Lagou Agent Product Shenzhen",
+    "type": "lagou",
+    "keyword": "Agent 产品",
+    "city": "深圳",
+    "priority": 65,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  },
+  {
+    "name": "Lagou AI Operations Guangzhou",
+    "type": "lagou",
+    "keyword": "AI运营",
+    "city": "广州",
+    "priority": 64,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  },
+  {
+    "name": "Lagou Product Manager Shanghai",
+    "type": "lagou",
+    "keyword": "产品经理 AI",
+    "city": "上海",
+    "priority": 64,
+    "category": "lagou",
+    "enabled": true,
+    "status": "test"
+  }
+]

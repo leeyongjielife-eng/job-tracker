@@ -1,0 +1,1121 @@
+{
+  "generated_at": "2026-06-16T17:10:04.536833+00:00",
+  "generated_from_tasks": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin_search_tasks.json",
+  "generated_from_sources_dir": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources",
+  "exports": [
+    {
+      "task_id": "linkedin-ai-product-manager-cn",
+      "task_name": "LinkedIn AI Product Manager CN",
+      "query": "AI Product Manager",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Manager&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Technical Product Manager, AI Systems",
+          "company": "A1",
+          "location": "中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/technical-product-manager-ai-systems-at-a1-4378773648?position=1&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=nIhNY4bhjJTfCG8JGQhuQQ%3D%3D",
+          "published_at": "2026-05-25"
+        },
+        {
+          "title": "AI Product Manager",
+          "company": "RayNeo",
+          "location": "深圳",
+          "summary": "Real page summary: build AI productivity tools that turn voice and video into intelligent insights such as automated meeting minutes, smart summaries, and task tracking; own the end-to-end AI feature lifecycle from ASR to LLM summarization, working with GPT/Claude-style models and user-facing workflow design.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-at-rayneo-4403699156?position=2&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=tZBSFf04nFPJERTSQhPIlQ%3D%3D",
+          "published_at": "2026-04-21"
+        },
+        {
+          "title": "AI Product Manager - AI Router",
+          "company": "Confidential",
+          "location": "上海市, 中国",
+          "summary": "Real page summary: own an AI router and Multi-LLM platform focused on model aggregation, intelligent routing, token metering, commercialization controls, and infra-style platform delivery across high-concurrency AI traffic.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422194924?position=3&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=iIMtB6zvgP0%2F9iebQq4BIw%3D%3D",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "Product Manager",
+          "company": "MiniMax",
+          "location": "上海市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-minimax-4395951592?position=4&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=7dAKqj4y3mxT6G4AxQ3AEw%3D%3D",
+          "published_at": "2026-04-08"
+        },
+        {
+          "title": "AI Product Manager - AI Router",
+          "company": "Confidential",
+          "location": "北京市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422302604?position=5&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=KshbbkZexpk63tkW%2BgITLQ%3D%3D",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "Product Manager — GenAI & Cloud Platform",
+          "company": "Walmart Marketplace",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=6&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=x5LYOB2djqYBOjRY7niw7Q%3D%3D",
+          "published_at": "2026-03-23"
+        },
+        {
+          "title": "Product Manager, AI Solutions",
+          "company": "Wing Assistant",
+          "location": "上海市",
+          "summary": "Real page summary: build 0-to-1 AI products for M32 AI, an agentic AI startup for SMBs, working directly with the CPO on product roadmaps, rapid prototyping, user stories, market validation, product marketing, user feedback loops, and scalable product/operations systems.",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-ai-solutions-at-wing-assistant-4406781402?position=7&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=dN0GKjUY%2BKsqwqu6lp8Yxg%3D%3D",
+          "published_at": "2026-05-04"
+        },
+        {
+          "title": "AI Product Owner",
+          "company": "施耐德电气",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376490908?position=8&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=BQcRMOhwZKsPCtaVtd0nDQ%3D%3D",
+          "published_at": "2026-02-25"
+        },
+        {
+          "title": "AI Product Owner",
+          "company": "施耐德电气",
+          "location": "北京市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376487959?position=9&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=%2B4eSrG5DY9EseuImf6ADdA%3D%3D",
+          "published_at": "2026-02-25"
+        },
+        {
+          "title": "Razer Gold Product Owner – AI Digital Wallet",
+          "company": "Razer",
+          "location": "成都市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/razer-gold-product-owner-%E2%80%93-ai-digital-wallet-at-razer-4406159362?position=10&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=sFIMr1r1yCkcST32ceb%2F2w%3D%3D",
+          "published_at": "2026-04-29"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-agent-product-cn",
+      "task_name": "LinkedIn Agent Product CN",
+      "query": "Agent Product Manager",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Product%20Manager&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Product Manager",
+          "company": "OPPO",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-oppo-4330384149?position=1&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=3lbueQdR6aPEWQ2pA6LfmA%3D%3D",
+          "published_at": "2026-01-06"
+        },
+        {
+          "title": "Product Manager_Power tools",
+          "company": "Bosch (China) Investment Ltd.",
+          "location": "长宁区",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-power-tools-at-bosch-china-investment-ltd-4378488030?position=2&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=mvr5fZrXWz7Ks3PqaLxJRw%3D%3D",
+          "published_at": "2026-03-02"
+        },
+        {
+          "title": "Product Manager",
+          "company": "MiniMax",
+          "location": "上海市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-minimax-4395951592?position=3&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=s8wwioSHKLEkOE7IXCKa1Q%3D%3D",
+          "published_at": "2026-04-08"
+        },
+        {
+          "title": "Product Manager (Core Experience)",
+          "company": "LotusFlare",
+          "location": "西安",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-core-experience-at-lotusflare-4376485617?position=4&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=b4yfg0XOtNrViOdaGeXh2Q%3D%3D",
+          "published_at": "2026-06-04"
+        },
+        {
+          "title": "Product Manager",
+          "company": "塔吉特百货",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-target-4419568954?position=5&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=OMzKXTSqTBDurZHQR0TENQ%3D%3D",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "Product Manager",
+          "company": "塔吉特百货",
+          "location": "上海市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-target-4419576812?position=6&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=GKTP5ofbn2nsSJndm4dXZA%3D%3D",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "Product Manager",
+          "company": "ARK Wealth Management-NOAH",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-ark-wealth-management-noah-4405958489?position=7&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=vwxDA8ubaPccw2bcpI4a7g%3D%3D",
+          "published_at": "2026-04-27"
+        },
+        {
+          "title": "Software Product Manager",
+          "company": "OPPO",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/software-product-manager-at-oppo-4393404463?position=8&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=NMIvovme7W3Xl6Qk3pDevQ%3D%3D",
+          "published_at": "2026-04-02"
+        },
+        {
+          "title": "Digital Product Manager",
+          "company": "国泰航空",
+          "location": "深圳",
+          "summary": "Real page summary: drive digital product strategy and customer experience for Chinese Mainland users across Cathay's travel and lifestyle platforms, with emphasis on WeChat, customer journeys, digital ecosystem fit, experimentation, KPI ownership, and cross-functional delivery; no explicit AI, agent, or model-platform scope is visible on the JD.",
+          "link": "https://cn.linkedin.com/jobs/view/digital-product-manager-at-cathay-pacific-4404999179?position=9&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=Q%2BK4KJaoNMeeIz90RxnfmA%3D%3D",
+          "published_at": "2026-06-08"
+        },
+        {
+          "title": "Product Manager",
+          "company": "西门子",
+          "location": "北京市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-siemens-4398133457?position=10&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=0QXTywgF0VwW97UB9AQ13w%3D%3D",
+          "published_at": "2026-04-10"
+        },
+        {
+          "title": "Agent AI Product Manager",
+          "company": "WuXi Biologics/药明生物",
+          "location": "上海市",
+          "summary": "Real page summary: lead agentic AI products from discovery to prototype, build, launch, adoption, and iteration inside Digital Labs; define high-value agent workflows, product architecture, tool use, APIs, data integrations, HITL checkpoints, observability, guardrails, and evaluation quality for AI-native enterprise products, platforms, workflows, and tools.",
+          "link": "https://cn.linkedin.com/jobs/view/agent-ai-product-manager-at-wuxi-biologics-4414965608?position=11&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=4C5YuzNUuQZpERiTi7aV%2Bw%3D%3D",
+          "published_at": "2026-05-14"
+        },
+        {
+          "title": "Staff Product Manager – CIX (China Intelligence Export Hub)",
+          "company": "通用汽车",
+          "location": "上海市",
+          "summary": "Real page summary: own export intelligence product strategy for China-origin vehicles across Intelligent Driving, Intelligent Cockpit/HMI, Connectivity and OnStar, defining product requirements, roadmap, experience content, and global platform integration for GM export markets.",
+          "link": "https://cn.linkedin.com/jobs/view/staff-product-manager-%E2%80%93-cix-china-intelligence-export-hub-at-general-motors-4414931914?position=12&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=pxyOvT4wX%2FYAoLumUF0T0A%3D%3D",
+          "published_at": "2026-06-05"
+        },
+        {
+          "title": "Product Manager",
+          "company": "德马泰克",
+          "location": "上海市",
+          "summary": "Real page summary: product manager role in material handling and supply chain solutions, owning commercial viability, product strategy, roadmap, lifecycle management, launches, and cross-functional development across hardware, controls, and software integration; no explicit AI, agent, or model-platform scope is visible on the JD.",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-dematic-4411512152?position=13&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=BdSxhEKjAo5PNxoOSVTzCA%3D%3D",
+          "published_at": "2026-06-05"
+        },
+        {
+          "title": "Product Manager, AI Solutions",
+          "company": "Wing Assistant",
+          "location": "上海市",
+          "summary": "Real page summary: build 0-to-1 AI products for M32 AI, an agentic AI startup for SMBs, working directly with the CPO on product roadmaps, rapid prototyping, user stories, market validation, product marketing, user feedback loops, and scalable product/operations systems.",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-ai-solutions-at-wing-assistant-4406781402?position=14&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=1VScrjnzF4aCouh9Iw06JQ%3D%3D",
+          "published_at": "2026-05-04"
+        },
+        {
+          "title": "Product Manager",
+          "company": "莫仕公司",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-molex-4423602771?position=15&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=t%2FKENMODa1jcVVhQfU1hDw%3D%3D",
+          "published_at": "2026-06-11"
+        },
+        {
+          "title": "Product Manager -Marketplace",
+          "company": "Booking.com",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-marketplace-at-booking-com-4423395916?position=16&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=ogwMvnXzLIOAkfo7lR349w%3D%3D",
+          "published_at": "2026-06-04"
+        },
+        {
+          "title": "产品经理",
+          "company": "宝时得科技",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-positec-4422598293?position=17&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=C0BzMen4RxpI2bjPTDNHRA%3D%3D",
+          "published_at": "2026-06-01"
+        },
+        {
+          "title": "Senior Product Manager",
+          "company": "Tata Communications",
+          "location": "上海市, 中国",
+          "summary": "Real page summary: own managed enterprise Wi-Fi and LAN product strategy, positioning, roadmap, go-to-market, and service transformation across networking domains; the JD emphasizes managed Wi-Fi, LAN, customer journey, and business process transformation rather than explicit AI, agent, or model-platform scope.",
+          "link": "https://cn.linkedin.com/jobs/view/senior-product-manager-at-tata-communications-4419827795?position=18&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=D%2BkPS0iBDoXnyPHJ1M4bGA%3D%3D",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "PRODUCT MANAGER III",
+          "company": "TE 中国",
+          "location": "东莞",
+          "summary": "Real page summary: standard TE Connectivity product management role covering new product development, manufacturing, marketing, overall product strategy, business leadership, and capacity planning to meet sales and profit targets; no explicit AI, agent, or model-platform scope is visible on the JD.",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-iii-at-te-connectivity-4426770474?position=19&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=gaJoI5Z9qVoqL%2FkF4x0wig%3D%3D",
+          "published_at": "2026-06-10"
+        },
+        {
+          "title": "产品（企业管理）",
+          "company": "大连博克斯科技有限公司",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/%E4%BA%A7%E5%93%81%EF%BC%88%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%EF%BC%89-at-%E5%A4%A7%E8%BF%9E%E5%8D%9A%E5%85%8B%E6%96%AF%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421438243?position=20&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=9TOcJR5c3qQnZAvkgKc0gA%3D%3D",
+          "published_at": "2026-05-29"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-ai-operations-cn",
+      "task_name": "LinkedIn AI Ops CN",
+      "query": "AI Operations",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Operations&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "AI Operations — Expert",
+          "company": "Noah Holdings",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-operations-%E2%80%94-expert-at-noah-holdings-4424333448?position=1&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=oLL0jg6KyF%2FGf2Ca%2FEBiMw%3D%3D",
+          "published_at": "2026-06-04"
+        },
+        {
+          "title": "AI产品运营经理",
+          "company": "平安健康保险股份有限公司",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E7%BB%8F%E7%90%86-at-%E5%B9%B3%E5%AE%89%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%A9%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4418982426?position=2&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=xaQ6nDXqYSGMkIO2Vzt5gw%3D%3D",
+          "published_at": "2026-05-25"
+        },
+        {
+          "title": "豆包AI大模型平台运营（国际化方向）-火山方舟MaaS",
+          "company": "字节跳动",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/%E8%B1%86%E5%8C%85ai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%90%A5%EF%BC%88%E5%9B%BD%E9%99%85%E5%8C%96%E6%96%B9%E5%90%91%EF%BC%89-%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9Fmaas-at-bytedance-4403844242?position=3&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=eMODWF72GpfhkZKeo1UFHA%3D%3D",
+          "published_at": "2026-04-18"
+        },
+        {
+          "title": "豆包AI大模型平台运营（国际化方向）-火山方舟MaaS",
+          "company": "字节跳动",
+          "location": "杭州-绍兴地区",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/%E8%B1%86%E5%8C%85ai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%90%A5%EF%BC%88%E5%9B%BD%E9%99%85%E5%8C%96%E6%96%B9%E5%90%91%EF%BC%89-%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9Fmaas-at-bytedance-4387118748?position=4&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=d3Tl4KeeksPaoPKmzS75kQ%3D%3D",
+          "published_at": "2026-03-18"
+        },
+        {
+          "title": "AI运营",
+          "company": "杭州数聚科技有限公司",
+          "location": "成都市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E8%BF%90%E8%90%A5-at-%E6%9D%AD%E5%B7%9E%E6%95%B0%E8%81%9A%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4406007701?position=5&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=EJH58qmk7W4wt0YMr0m6cA%3D%3D",
+          "published_at": "2026-04-29"
+        },
+        {
+          "title": "AI服务运营",
+          "company": "沃尔玛(中国)投资有限公司",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5-at-%E6%B2%83%E5%B0%94%E7%8E%9B-%E4%B8%AD%E5%9B%BD-%E6%8A%95%E8%B5%84%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421504326?position=6&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=lam99h0hbWMyeWIS90CU5A%3D%3D",
+          "published_at": "2026-06-06"
+        },
+        {
+          "title": "Senior AI Application Operations Specialist",
+          "company": "Noah Holdings",
+          "location": "上海市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/senior-ai-application-operations-specialist-at-noah-holdings-4418558727?position=7&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=oei9kur6M8fY%2BS%2FLmGN2QQ%3D%3D",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "AI特效模版运营/AI平台运营",
+          "company": "北京位来小猎科技有限公司",
+          "location": "北京市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E7%89%B9%E6%95%88%E6%A8%A1%E7%89%88%E8%BF%90%E8%90%A5-ai%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%90%A5-at-%E5%8C%97%E4%BA%AC%E4%BD%8D%E6%9D%A5%E5%B0%8F%E7%8C%8E%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4423742728?position=8&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=vKS04uNmikZCF12Z9Q5IaA%3D%3D",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "ai智能运营专员（酒店业务线",
+          "company": "诚伯信息有限公司",
+          "location": "杭州",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E6%99%BA%E8%83%BD%E8%BF%90%E8%90%A5%E4%B8%93%E5%91%98%EF%BC%88%E9%85%92%E5%BA%97%E4%B8%9A%E5%8A%A1%E7%BA%BF-at-%E8%AF%9A%E4%BC%AF%E4%BF%A1%E6%81%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4420833614?position=9&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=aW2zmwEwEtfNro4lNjmhWQ%3D%3D",
+          "published_at": "2026-05-29"
+        },
+        {
+          "title": "AI开发运维工程师 – IT 制造支持",
+          "company": "Tesla",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4%E5%B7%A5%E7%A8%8B%E5%B8%88-%E2%80%93-it-%E5%88%B6%E9%80%A0%E6%94%AF%E6%8C%81-at-tesla-4420256419?position=10&pageNum=0&refId=n0d2GcaDFjSuXnawBph5dA%3D%3D&trackingId=TYNUxs6YMneoOjTcwdZ23A%3D%3D",
+          "published_at": "2026-05-03"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-genai-product-cn",
+      "task_name": "LinkedIn GenAI Product CN",
+      "query": "GenAI Product Manager",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=GenAI%20Product%20Manager&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Technical Product Manager, AI Systems",
+          "company": "A1",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/technical-product-manager-ai-systems-at-a1-4378773648?position=1&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=VQPwt4fZEbeM4b%2BkJSToBw%3D%3D",
+          "published_at": "2026-05-25"
+        },
+        {
+          "title": "Product Manager — GenAI & Cloud Platform",
+          "company": "Walmart Marketplace",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=2&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=vjP0joSe55tyBvpaH%2BjFCQ%3D%3D",
+          "published_at": "2026-03-23"
+        },
+        {
+          "title": "Agent平台产品/大模型平台产品",
+          "company": "Confidential",
+          "location": "中国",
+          "summary": "Real page summary: own a general AI Agent platform for multiple business teams, centered on workflow orchestration, tool calling, MCP integrations, knowledge base, RAG, memory, context management, model routing, agent evaluation, monitoring, safety controls, and platform reuse across enterprise scenarios.",
+          "link": "https://cn.linkedin.com/jobs/view/agent%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81-at-confidential-4422241669?position=3&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=OQQv%2FL5fv7bbiAzlzVIcTg%3D%3D",
+          "published_at": "2026-06-09"
+        },
+        {
+          "title": "Senior AI PO, CIB AI CoE",
+          "company": "渣打银行",
+          "location": "广州",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/senior-ai-po-cib-ai-coe-at-standard-chartered-4401874642?position=4&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=x%2FiwnWpBIMwaji%2BFvfMk0Q%3D%3D",
+          "published_at": "2026-04-16"
+        },
+        {
+          "title": "AI Product Manager - AI Router",
+          "company": "Confidential",
+          "location": "上海市, 中国",
+          "summary": "Real page summary: own an AI router and Multi-LLM platform focused on model aggregation, intelligent routing, token metering, commercialization controls, and infra-style platform delivery across high-concurrency AI traffic.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422194924?position=5&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=aBcGiSAMzlq3pYtV3XNaYQ%3D%3D",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "AI Product Owner",
+          "company": "施耐德电气",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376490908?position=6&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=G7DqFQ6RScZcnVaJaCglJw%3D%3D",
+          "published_at": "2026-02-25"
+        },
+        {
+          "title": "AI产品经理",
+          "company": "鼎捷软件股份有限公司",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E9%BC%8E%E6%8D%B7%E8%BD%AF%E4%BB%B6%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4406739647?position=7&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=I7e5L2MSrgYAX8JUxXvN2A%3D%3D",
+          "published_at": "2026-05-01"
+        },
+        {
+          "title": "AI Product Owner",
+          "company": "施耐德电气",
+          "location": "北京市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376487959?position=8&pageNum=0&refId=tx3TDD%2FW7b6AHRP6pfL7Eg%3D%3D&trackingId=cK%2BNthyGv6oOGlMg2PpoPw%3D%3D",
+          "published_at": "2026-02-25"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-ai-product-manager-zh-cn",
+      "task_name": "LinkedIn AI Product Manager ZH CN",
+      "query": "AI产品经理",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "AI产品经理-AI Router方向",
+          "company": "Confidential",
+          "location": "中国",
+          "summary": "Real page summary: own an AI router and Multi-LLM aggregation platform spanning model standardization, smart routing, load balancing, rate limiting, failover, token metering, billing, and enterprise-grade AI platform commercialization.",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-ai-router%E6%96%B9%E5%90%91-at-confidential-4422228686?refId=MZAF4tmQHFi%2F%2FEwzihOL7Q%3D%3D&trackingId=R8KPnpX1UWpnzFTKxcTztA%3D%3D",
+          "published_at": "2026-06-10"
+        },
+        {
+          "title": "产品经理-AI方向",
+          "company": "翔傲信息科技（上海）有限公司",
+          "location": "上海市",
+          "summary": "Real page summary: design AI-driven audit workflows and agent systems for audit scenarios, covering PRD ownership, LangGraph-style process planning, agent logic, workflow nodes, review rules, data structures, QA scenarios, and cross-functional delivery with AI experts and engineers.",
+          "link": "https://cn.linkedin.com/jobs/view/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-ai%E6%96%B9%E5%90%91-at-%E7%BF%94%E5%82%B2%E4%BF%A1%E6%81%AF%E7%A7%91%E6%8A%80%EF%BC%88%E4%B8%8A%E6%B5%B7%EF%BC%89%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4425712800?refId=MZAF4tmQHFi%2F%2FEwzihOL7Q%3D%3D&trackingId=ejIPEJ2cbcjVbzgRAJxvDw%3D%3D",
+          "published_at": "2026-06-15"
+        },
+        {
+          "title": "AI产品专家",
+          "company": "壹沓科技(上海)有限公司",
+          "location": "静安区",
+          "summary": "Real page summary: own AI product planning and architecture across fulfillment, customs, and marketing scenarios; lead 0-to-1 AI Agent and intelligent fulfillment products, drive commercialization of toB AI products, and turn AI tooling and delivery methods into repeatable product methodology.",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E4%B8%93%E5%AE%B6-at-%E5%A3%B9%E6%B2%93%E7%A7%91%E6%8A%80-%E4%B8%8A%E6%B5%B7-%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4422329880?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=Vn00d04O2xEykBw3nYn%2BXQ%3D%3D",
+          "published_at": "2026-06-02"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-genai-product-zh-cn",
+      "task_name": "LinkedIn Gen-AI Product ZH CN",
+      "query": "Gen-AI产品经理",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Gen-AI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Gen-AI产品经理",
+          "company": "上海瑞霖贸易有限公司",
+          "location": "广州",
+          "summary": "Real page summary: own Gen-AI product planning and roadmap design across LLM, Agent, multimodal, RAG, enterprise knowledge base and knowledge graph use cases; expected to use Prompt Engineering, System Prompt design, Dify, Coze, low-code AI workflows, and AI platform product delivery with hands-on prototyping.",
+          "link": "https://cn.linkedin.com/jobs/view/gen-ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E4%B8%8A%E6%B5%B7%E7%91%9E%E9%9C%96%E8%B4%B8%E6%98%93%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4416878219?position=5&pageNum=0&refId=Pu3%2B78ZzAxH%2FUXVBZXhldg%3D%3D&trackingId=Obf9EAiCcH4qxNAzgn3ijA%3D%3D",
+          "published_at": "2026-06-01"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-agent-product-zh-cn",
+      "task_name": "LinkedIn Agent Product ZH CN",
+      "query": "智能体产品经理",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=%E6%99%BA%E8%83%BD%E4%BD%93%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Product Lead, AI-Native (Special Projects)",
+          "company": "ShopBack",
+          "location": "深圳",
+          "summary": "Real page summary: build first versions of AI agents and multi-agent AI solutions, using LangGraph and leading-edge LLMs; combine product discovery, merchant pain-point research, AI-native product thinking, and hands-on system design across agent backends and user experience.",
+          "link": "https://cn.linkedin.com/jobs/view/product-lead-ai-native-special-projects-at-shopback-4372608956?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=fsXdmxmhz55NGIHAkclEaA%3D%3D",
+          "published_at": "2026-06-07"
+        },
+        {
+          "title": "AI智能体与低代码平台 产品负责人",
+          "company": "沃尔玛(中国)投资有限公司",
+          "location": "深圳",
+          "summary": "Visible page evidence confirms a Shenzhen AI agent and low-code platform product lead role. The title and page context strongly indicate ownership over AI agent platform capabilities and low-code product direction, but the detailed JD body is partially hidden behind LinkedIn login prompts and should be enriched later if we keep it.",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%8E%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%B9%B3%E5%8F%B0-%E4%BA%A7%E5%93%81%E8%B4%9F%E8%B4%A3%E4%BA%BA-at-%E6%B2%83%E5%B0%94%E7%8E%9B-%E4%B8%AD%E5%9B%BD-%E6%8A%95%E8%B5%84%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4425705654?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=XNaQRu21ZfNGuhbDbYQaZQ%3D%3D",
+          "published_at": "2026-06-14"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-zh-cn",
+      "task_name": "LinkedIn AI Platform Product ZH CN",
+      "query": "AI平台产品经理",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "高级产品经理",
+          "company": "平安健康保险股份有限公司",
+          "location": "深圳",
+          "summary": "Real page summary: own company-level AI platform product build-out and iteration, supporting large-model applications across business scenarios; scope covers model evaluation, training, deployment, launch, and full lifecycle management for model and algorithm platform products.",
+          "link": "https://cn.linkedin.com/jobs/view/%E9%AB%98%E7%BA%A7%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E5%B9%B3%E5%AE%89%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%A9%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4427569726?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=Hx2QWqkyI8bn6WW3DEc%2FEg%3D%3D",
+          "published_at": "2026-06-11"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-llm-product-zh-cn",
+      "task_name": "LinkedIn LLM Product ZH CN",
+      "query": "LLM产品经理",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=LLM%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "AI大模型产品经理",
+          "company": "上海海能证券投资顾问有限公司",
+          "location": "上海市",
+          "summary": "Real page summary: 负责 AI 大模型的性能调优工作，运用专业知识和实际经验，对模型的参数进行调整和优化，以提高模型的准确性、效率和稳定性。 跟踪和研究最新的大模型技术和算法，将其应用于实际项目中，不断提升模型的性能和竞争力。 与研发团队紧密合作，参与模型的训练和评估过程，提供专业的运营视角和建议，确保模型的研发方向符合市场需求和业务目标。 主导智能客服项目的运营和管理，基于 AI 大模型技术，优化智能客服系统的功能和性能，提升客户服务质量和效率。 分析智能客服的业务数据和用户反馈，挖掘潜在问题和需求，制定针对性的改进措施和优化方案，不断提升用户满意度。 协调跨部门团队，包括技术开发、产品设计、客户服务等，确保智能客服项目的顺利推进和高效运行，实现项目目标和业务价值。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E4%B8%8A%E6%B5%B7%E6%B5%B7%E8%83%BD%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E9%A1%BE%E9%97%AE%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4420533397?position=3&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=1Mk3setlantA1o2lpDrelg%3D%3D",
+          "published_at": "2026-06-03"
+        },
+        {
+          "title": "AI产品经理-飞书多维表格（深圳/北京）",
+          "company": "字节跳动",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-%E9%A3%9E%E4%B9%A6%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC%EF%BC%88%E6%B7%B1%E5%9C%B3-%E5%8C%97%E4%BA%AC%EF%BC%89-at-bytedance-4427299352?position=5&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=2OhzmAyZ2vl1gxnlrUOHhw%3D%3D",
+          "published_at": "2026-06-15"
+        },
+        {
+          "title": "AI产品经理",
+          "company": "平安健康保险股份有限公司",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E5%B9%B3%E5%AE%89%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%A9%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4417346266?position=8&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=HwvGajKEh90W2M4oNDIESg%3D%3D",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "Product Manager — GenAI & Cloud Platform",
+          "company": "Walmart Marketplace",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=10&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=5OqWuiobXSN8srP1i0s7Vg%3D%3D",
+          "published_at": "2026-04-18"
+        },
+        {
+          "title": "AI产品经理",
+          "company": "Confidential",
+          "location": "杭州",
+          "summary": "Real page summary: 我们是全球最早也是最成熟的数字资产平台之一，服务于全球数千万用户。我们始终位列全球Top交易所之列，提供涵盖数千种数字资产的全面交易和财富管理产品。我们拥有遍布全球主要金融中心的数千名员工，秉持远程优先、高度自主的企业文化，吸引着那些在快节奏、高挑战性环境中蓬勃发展的优秀人才。 作为平台 AI 基础设施与算力调度的“交通指挥官”，你将主导 AI 模型中转站及 Multi-LLM 聚合平台的整体规划与矩阵演进。该岗位直接面对多模型适配、高并发流量调度、金融级Token计费等高壁垒场景。你将拥有极高的架构设计自主权，与顶尖的算法专家、基础架构（Infra）工程师和数据科学家协同攻坚，亲手打造一个高可用、低延迟、具备强商业化变现能力的全球化 AI 路由中台。 多模型聚合与标准化（Multi-LLM Hub）：负责海量通用大模型（如 OpenAI, Anthropic, DeepSeek 等）的标准化接入、适配与封装，统一输出高兼容性的标准化 API 接口，彻底解决多模型版本兼容与调用不一致痛点。 智能流量调度（Smart Routing & High Availability）：设计并持续迭代 AI 流量路由策略，主导智能路由、动态负载均衡（Load Balancing）、并发限流（Rate Limiting）、模型降级与故障熔断机制的设计，保障平台在极端高并发下的绝对稳定性。 商业化中台与权限管控（Token Metering & Monetization）：构建企业级 AI 权限体系、多租户账号体系、调用配额管理以及精细化的 Token 计费账单（Metering & Billing）、日志审计与风控防刷系统，支撑 B 端企业与 C 端用户的大规模商业化接入。 全生命周期推进（Infra PMO）：协同研发、测试、运维团队高效推进版本迭代，梳理全链路业务流，跟进线上问题闭环，持续优化中转平台的吞吐量性能与综合成本结构（Cost Optimization）。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-confidential-4422188956?position=15&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=oKulwYWNqZf7i8yWZFO4Mw%3D%3D",
+          "published_at": "2026-06-03"
+        },
+        {
+          "title": "AI产品经理",
+          "company": "上海克而瑞信息技术有限公司",
+          "location": "上海市",
+          "summary": "Real page summary: 负责AI产品的整体规划和设计，包括需求分析、产品定义、功能设计等。 与技术团队紧密合作，推动AI产品的研发和落地，确保产品按时高质量上线。 深入理解业务需求，将业务问题转化为具体的AI建模问题，设计合理的解决方案。 跟踪和分析产品上线后的效果，持续优化产品性能和用户体验。 关注AI领域的***和趋势，探索新的应用场景和技术方案。 与业务团队保持密切沟通，收集用户反馈，不断改进产品功能和性能。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E4%B8%8A%E6%B5%B7%E5%85%8B%E8%80%8C%E7%91%9E%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421083084?position=16&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=TjbLLuCmj6jr67pq%2BJhcUA%3D%3D",
+          "published_at": "2026-06-03"
+        },
+        {
+          "title": "AI Product Manager",
+          "company": "RayNeo",
+          "location": "深圳",
+          "summary": "Real page summary: We are looking for an AI Product Manager to build the next generation of productivity tools. You will lead the development of features that turn raw voice and video data into intelligent insights—such as automated meeting minutes, smart summaries, and task tracking. Key Responsibilities Product Development: Own the end-to-end lifecycle of AI features, from transcription (ASR) to intelligent summarization (LLM). AI Innovation: Collaborate with engineers to apply Large Language Models (LLMs) to solve real-world productivity pain points. User Experience: Design simple, intuitive workflows that make AI insights feel like magic for our users. Data-Driven Growth: Use user feedback and data analytics to iterate quickly and improve model accuracy and feature adoption.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-at-rayneo-4403699156?position=21&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=Sc8eRnRfvHzjXsm7cYZ7sA%3D%3D",
+          "published_at": "2026-05-18"
+        },
+        {
+          "title": "AI产品经理",
+          "company": "烟台欣和企业食品有限公司",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E7%83%9F%E5%8F%B0%E6%AC%A3%E5%92%8C%E4%BC%81%E4%B8%9A%E9%A3%9F%E5%93%81%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4426470443?position=26&pageNum=0&refId=8OpZSVKp8%2Fqxn94f0JNdnQ%3D%3D&trackingId=bYBDqXZUA9j%2Bt6sFiik6ew%3D%3D",
+          "published_at": "2026-06-16"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-generative-ai-product-zh-cn",
+      "task_name": "LinkedIn Generative AI Product ZH CN",
+      "query": "生成式AI产品经理",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=%E7%94%9F%E6%88%90%E5%BC%8FAI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-agent-platform-product-zh-cn",
+      "task_name": "LinkedIn Agent Platform Product ZH CN",
+      "query": "Agent平台产品",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Product Manager — GenAI & Cloud Platform",
+          "company": "Walmart Marketplace",
+          "location": "深圳",
+          "summary": "Real page summary: About the Role Walmart Global eCommerce China (GEC China) is accelerating its next-generation technology transformation, anchored by Generative AI and a strategic migration to China-local cloud infrastructure. We are looking for an exceptional Product Manager, GenAI & Cloud Platform who sits at the intersection of cutting-edge AI technology, enterprise-scale cloud engineering, and business impact. This is not a theoretical AI role — we need someone who has shipped real GenAI products in enterprise environments, who understands the nuances of the China AI ecosystem (from foundational models to regulatory constraints), and who can navigate complex multi-cloud vendor relationships (Alibaba Cloud, Tencent Cloud, Volcengine, and beyond). You will own the product strategy for our GenAI and cloud platform layer, partnering with engineering, data science, business, and security teams across China and globally. What You Will Own 、 • Define and drive the product roadmap for Walmart GEC China's G",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=2&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=%2BJ%2Fp61%2B8CTv9Kh32etQZaA%3D%3D",
+          "published_at": "2026-04-18"
+        },
+        {
+          "title": "Head of Data Platform Product (AI-Native Transformation)",
+          "company": "蚂蚁集团",
+          "location": "杭州",
+          "summary": "Real page summary: Position Overview As the Head of Data Platform Product, you will lead the strategic evolution of our enterprise data infrastructure into the AGI era. This is not a maintenance role; it is a transformative leadership position. You will challenge traditional data warehousing paradigms and drive AI-native thinking across our mature data ecosystem. Your mission is to redefine how data assets are managed, processed, and productized, building the end-to-end data pipelines, infrastructure, and operational models required to power large-scale model training and AI-driven applications at scale. Key Responsibilities： 1. AI-Native Strategy & Paradigms Shift Drive the strategic transformation of a mature data platform, shifting the organization from traditional BI/Analytics architectures to an AI-Native data ecosystem.",
+          "link": "https://cn.linkedin.com/jobs/view/head-of-data-platform-product-ai-native-transformation-at-ant-group-4421474240?position=3&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=8MwrHTU40395H%2BWVu%2BWqcw%3D%3D",
+          "published_at": "2026-06-03"
+        },
+        {
+          "title": "Product Lead, AI-Native (Special Projects)",
+          "company": "ShopBack",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-lead-ai-native-special-projects-at-shopback-4372608956?position=4&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=k3gA6GA2tDOXhYhwxAQATw%3D%3D",
+          "published_at": "2026-06-10"
+        },
+        {
+          "title": "Sr. Associate Director, Software Engineering (AI Agent Platform Product Management)",
+          "company": "汇丰",
+          "location": "广州",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/sr-associate-director-software-engineering-ai-agent-platform-product-management-at-hsbc-4425403106?position=12&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=ecGHQD94xBrBscxp8A2vhw%3D%3D",
+          "published_at": "2026-06-10"
+        },
+        {
+          "title": "Product Line Leader",
+          "company": "Whale",
+          "location": "杭州",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-line-leader-at-whale-4418067670?position=14&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=Q40UmNT5JIw7U6PLujJjfg%3D%3D",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "Product Manager",
+          "company": "Agora",
+          "location": "上海市",
+          "summary": "Real page summary: Agora is the global leader in real-time engagement, providing developers with simple, flexible, and powerful APIs to embed real-time conversational AI, voice, video, interactive live streaming, and chat into their applications and IoT devices. Headquartered in Santa Clara, CA, Agora is trusted by over 1,700 leading organizations across the globe to power best-in-class real-time experiences from social media and live shopping to education and telehealth. About The Role Lead the strategy, and roadmap for Agora’s real-time communication and cloud services products, driving adoption across live streaming, voice, video, recording, and real-time messaging experiences. Partner closely with customers and cross-functional teams to validate use cases, launch impactful features, and ensure compliant, and measurable product outcomes. What You'll Do Core Responsibilities Support the strategy and roadmap for Agora’s products and solutions with a focus on Real-time Communication SDKs and Cloud Servic",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-at-agora-4370510786?position=16&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=uywWBXcjqU8NVpKMr%2FmTEw%3D%3D",
+          "published_at": "2026-05-18"
+        },
+        {
+          "title": "Data and Innovation Group Product Leader",
+          "company": "National Basketball Association (NBA)",
+          "location": "上海市",
+          "summary": "Real page summary: Develop and implement a comprehensive digital product strategy tailored to the Chinese market, leveraging insights from fan behavior and market trends. Lead the product development lifecycle, including ideation, design, development, testing, and launch of new digital products and features. Own and optimize the NBA China online product matrix, including: − NBA App (mobile and desktop) − WeChat Mini-Program (official NBA accounts and fan engagement tools) − Upcoming products (e.g., AI enhancements) Collaborate with cross-functional teams (e.g., engineering, design, marketing) to ensure seamless execution and delivery of high-quality digital products. Drive innovation by exploring emerging technologies (e.g., AI, AR/VR, mobile apps) to enhance fan experiences. Act as the APAC stakeholder and contributor to HQ-led AI exploration in sports media and copyright management.",
+          "link": "https://cn.linkedin.com/jobs/view/data-and-innovation-group-product-leader-at-national-basketball-association-nba-4391668003?position=19&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=B%2F5mXAfOsjJrvAvrroyMdQ%3D%3D",
+          "published_at": "2026-06-03"
+        },
+        {
+          "title": "AI产品经理",
+          "company": "Confidential",
+          "location": "杭州",
+          "summary": "Real page summary: 我们是全球最早也是最成熟的数字资产平台之一，服务于全球数千万用户。我们始终位列全球Top交易所之列，提供涵盖数千种数字资产的全面交易和财富管理产品。我们拥有遍布全球主要金融中心的数千名员工，秉持远程优先、高度自主的企业文化，吸引着那些在快节奏、高挑战性环境中蓬勃发展的优秀人才。 作为平台 AI 基础设施与算力调度的“交通指挥官”，你将主导 AI 模型中转站及 Multi-LLM 聚合平台的整体规划与矩阵演进。该岗位直接面对多模型适配、高并发流量调度、金融级Token计费等高壁垒场景。你将拥有极高的架构设计自主权，与顶尖的算法专家、基础架构（Infra）工程师和数据科学家协同攻坚，亲手打造一个高可用、低延迟、具备强商业化变现能力的全球化 AI 路由中台。 多模型聚合与标准化（Multi-LLM Hub）：负责海量通用大模型（如 OpenAI, Anthropic, DeepSeek 等）的标准化接入、适配与封装，统一输出高兼容性的标准化 API 接口，彻底解决多模型版本兼容与调用不一致痛点。 智能流量调度（Smart Routing & High Availability）：设计并持续迭代 AI 流量路由策略，主导智能路由、动态负载均衡（Load Balancing）、并发限流（Rate Limiting）、模型降级与故障熔断机制的设计，保障平台在极端高并发下的绝对稳定性。 商业化中台与权限管控（Token Metering & Monetization）：构建企业级 AI 权限体系、多租户账号体系、调用配额管理以及精细化的 Token 计费账单（Metering & Billing）、日志审计与风控防刷系统，支撑 B 端企业与 C 端用户的大规模商业化接入。 全生命周期推进（Infra PMO）：协同研发、测试、运维团队高效推进版本迭代，梳理全链路业务流，跟进线上问题闭环，持续优化中转平台的吞吐量性能与综合成本结构（Cost Optimization）。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-confidential-4422188956?position=21&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=UBboa3lN1UCLNA2vFcfCKw%3D%3D",
+          "published_at": "2026-06-03"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-agentic-platform-product-zh-cn",
+      "task_name": "LinkedIn Agentic Platform Product ZH CN",
+      "query": "智能体平台产品",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=%E6%99%BA%E8%83%BD%E4%BD%93%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81&location=China&position=1&pageNum=0",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-cn",
+      "task_name": "LinkedIn AI Platform Product CN",
+      "query": "AI Platform Product Manager",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Platform%20Product%20Manager&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Product Manager — GenAI & Cloud Platform",
+          "company": "Walmart Marketplace",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=1&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=RS4CTZFKK0cwB6kTDkhQhA%3D%3D",
+          "published_at": "2026-03-23"
+        },
+        {
+          "title": "Technical Product Manager, AI Systems",
+          "company": "A1",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/technical-product-manager-ai-systems-at-a1-4378773648?position=2&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=uPrdIyyouydvCPOnkUvggg%3D%3D",
+          "published_at": "2026-05-25"
+        },
+        {
+          "title": "AI Product Manager - AI Router",
+          "company": "Confidential",
+          "location": "上海市, 中国",
+          "summary": "Real page summary: own an AI router and Multi-LLM platform focused on model aggregation, intelligent routing, token metering, commercialization controls, and infra-style platform delivery across high-concurrency AI traffic.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422194924?position=3&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=oyYGTGPQDQnW%2FKvOEehGow%3D%3D",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "AI Product Manager - AI Router",
+          "company": "Confidential",
+          "location": "北京市, 中国",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422302604?position=4&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=hJCqZT6eciFx7tNc3Bi6SA%3D%3D",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "AI大模型平台产品负责人-火山方舟MaaS",
+          "company": "字节跳动",
+          "location": "杭州",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81%E8%B4%9F%E8%B4%A3%E4%BA%BA-%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9Fmaas-at-bytedance-4330250347?position=5&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=D5MClFmlL2YAbW%2BR7SLsMA%3D%3D",
+          "published_at": "2026-01-04"
+        },
+        {
+          "title": "Senior Product Manager, AI Gateway - Shanghai",
+          "company": "Kong",
+          "location": "上海市",
+          "summary": "Real page summary: own the AI Gateway data plane and related platform infrastructure, covering LLM and agent traffic routing, control-plane integration, roadmap delivery, and cross-functional work across AI connectivity products.",
+          "link": "https://cn.linkedin.com/jobs/view/senior-product-manager-ai-gateway-shanghai-at-kong-4407194085?position=6&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=2DKCxUXKcq%2FVu1xY7a3XZg%3D%3D",
+          "published_at": "2026-06-08"
+        },
+        {
+          "title": "Senior Product Manager – AI Short Drama Tools",
+          "company": "Meitu Inc.",
+          "location": "北京市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/senior-product-manager-%E2%80%93-ai-short-drama-tools-at-meitu-inc-4427503217?position=7&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=tJ1WXbG3yRM14V0eNzMZkg%3D%3D",
+          "published_at": "2026-06-11"
+        },
+        {
+          "title": "Senior AI PO, CIB AI CoE",
+          "company": "渣打银行",
+          "location": "广州",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/senior-ai-po-cib-ai-coe-at-standard-chartered-4401874642?position=8&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=3j7bYEiI0qUHnsaPn81Fgg%3D%3D",
+          "published_at": "2026-04-16"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-ai-product-ops-cn",
+      "task_name": "LinkedIn AI Product Ops CN",
+      "query": "AI Product Operations",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Operations&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "AI产品运营经理",
+          "company": "平安健康保险股份有限公司",
+          "location": "深圳",
+          "summary": "AI 产品运营，保险业务场景。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E7%BB%8F%E7%90%86-at-%E5%B9%B3%E5%AE%89%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%A9%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4418982426",
+          "published_at": "2026-05-25"
+        },
+        {
+          "title": "AI服务运营",
+          "company": "沃尔玛(中国)投资有限公司",
+          "location": "深圳",
+          "summary": "AI 服务运营，零售业务场景。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5-at-%E6%B2%83%E5%B0%94%E7%8E%9B-%E4%B8%AD%E5%9B%BD-%E6%8A%95%E8%B5%84%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421504326",
+          "published_at": "2026-06-06"
+        },
+        {
+          "title": "Senior AI Application Operations Specialist",
+          "company": "Noah Holdings",
+          "location": "上海市, 中国",
+          "summary": "AI application operations specialist.",
+          "link": "https://cn.linkedin.com/jobs/view/senior-ai-application-operations-specialist-at-noah-holdings-4418558727",
+          "published_at": "2026-05-27"
+        },
+        {
+          "title": "AI特效模版运营/AI平台运营",
+          "company": "北京位来小猎科技有限公司",
+          "location": "北京市",
+          "summary": "AI 平台运营，模板与平台场景。",
+          "link": "https://cn.linkedin.com/jobs/view/ai%E7%89%B9%E6%95%88%E6%A8%A1%E7%89%88%E8%BF%90%E8%90%A5-ai%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%90%A5-at-%E5%8C%97%E4%BA%AC%E4%BD%8D%E6%9D%A5%E5%B0%8F%E7%8C%8E%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4423742728",
+          "published_at": "2026-06-02"
+        },
+        {
+          "title": "AI Operation",
+          "company": "上海田明商务信息咨询有限公司",
+          "location": "上海市",
+          "summary": "AI operation.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-operation-at-%E4%B8%8A%E6%B5%B7%E7%94%B0%E6%98%8E%E5%95%86%E5%8A%A1%E4%BF%A1%E6%81%AF%E5%92%A8%E8%AF%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421724454",
+          "published_at": "2026-05-29"
+        },
+        {
+          "title": "AI 产品运营经理（ToB / 内部产品方向）",
+          "company": "Hays",
+          "location": "上海市, 中国",
+          "summary": "AI 产品运营经理，ToB / 内部产品方向。",
+          "link": "https://cn.linkedin.com/jobs/view/ai-%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E7%BB%8F%E7%90%86%EF%BC%88tob-%E5%86%85%E9%83%A8%E4%BA%A7%E5%93%81%E6%96%B9%E5%90%91%EF%BC%89-at-hays-4419171188",
+          "published_at": "2026-05-26"
+        }
+      ]
+    },
+    {
+      "task_id": "linkedin-agent-engineer-cn",
+      "task_name": "LinkedIn Agent Engineer CN",
+      "query": "Agent Engineer",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Engineer&location=China&position=1&pageNum=0",
+      "jobs": []
+    },
+    {
+      "task_id": "linkedin-applied-ai-engineer-cn",
+      "task_name": "LinkedIn Applied AI Engineer CN",
+      "query": "Applied AI Engineer",
+      "region": "China",
+      "source": "LinkedIn Browser Search",
+      "source_type": "linkedin_manual",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Applied%20AI%20Engineer&location=China&position=1&pageNum=0",
+      "jobs": [
+        {
+          "title": "Algorithm Engineer",
+          "company": "TPV",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/algorithm-engineer-at-tpv-4408995538?position=1&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=%2FCNfIKluhqmsuur5GHTz0w%3D%3D",
+          "published_at": "2026-05-05"
+        },
+        {
+          "title": "Applied AI Engineer",
+          "company": "A1",
+          "location": "中国",
+          "summary": "Real page summary: build a proactive AI assistant for everyday workflows, focusing on end-to-end AI feature delivery across prompts, tools, memory, agent workflows, reliability, evaluation, inference/serving, and real-world task completion rather than demo-only behavior.",
+          "link": "https://cn.linkedin.com/jobs/view/applied-ai-engineer-at-a1-4403896162?position=2&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=gGITKvX%2B3WltEwoTe2ZIQA%3D%3D",
+          "published_at": "2026-06-14"
+        },
+        {
+          "title": "AI Engineer",
+          "company": "Metaprise",
+          "location": "深圳",
+          "summary": "Real page summary: build AI-agent powered financial systems across AR/AP automation, SmartFlow, and cash-management workflows; the role centers on LangChain/LangGraph, multi-agent systems, RAG, vector retrieval, OCR, multimodal document processing, prompt engineering, and AI integration with ERP APIs.",
+          "link": "https://cn.linkedin.com/jobs/view/ai-engineer-at-metaprise-4420928311?position=3&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=iPDldj6JxH%2BtuVQD%2FfTFfw%3D%3D",
+          "published_at": "2026-05-04"
+        },
+        {
+          "title": "Machine Learning Engineer",
+          "company": "MeshyAI",
+          "location": "深圳",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/machine-learning-engineer-at-meshyai-4392589317?position=4&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=DWWsqIBL%2B04fXvymhnI6qA%3D%3D",
+          "published_at": "2026-05-30"
+        },
+        {
+          "title": "Generative AI Algorithms Engineer",
+          "company": "高通",
+          "location": "",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/generative-ai-algorithms-engineer-at-qualcomm-4422879801?position=5&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=vpizLdAHSRtUfEvG5ORX7A%3D%3D",
+          "published_at": "2026-06-01"
+        },
+        {
+          "title": "Generative AI - ML System Engineering",
+          "company": "MeshyAI",
+          "location": "上海市",
+          "summary": "",
+          "link": "https://cn.linkedin.com/jobs/view/generative-ai-ml-system-engineering-at-meshyai-4415347669?position=6&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=HIsXmJuQPAzRtPBo9%2FttYw%3D%3D",
+          "published_at": "2026-06-05"
+        }
+      ]
+    }
+  ],
+  "task_report": [
+    {
+      "task_id": "linkedin-ai-product-manager-cn",
+      "task_name": "LinkedIn AI Product Manager CN",
+      "query": "AI Product Manager",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-ai-product-manager-cn.browser_export.json",
+      "jobs_count": 10,
+      "freshest_published_at": "2026-06-02",
+      "oldest_published_at": "2026-02-25"
+    },
+    {
+      "task_id": "linkedin-agent-product-cn",
+      "task_name": "LinkedIn Agent Product CN",
+      "query": "Agent Product Manager",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-agent-product-cn.browser_export.json",
+      "jobs_count": 20,
+      "freshest_published_at": "2026-06-11",
+      "oldest_published_at": "2026-01-06"
+    },
+    {
+      "task_id": "linkedin-ai-operations-cn",
+      "task_name": "LinkedIn AI Ops CN",
+      "query": "AI Operations",
+      "expected_role_bucket": "ops_adjacent",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-ai-operations-cn.browser_export.json",
+      "jobs_count": 10,
+      "freshest_published_at": "2026-06-06",
+      "oldest_published_at": "2026-03-18"
+    },
+    {
+      "task_id": "linkedin-genai-product-cn",
+      "task_name": "LinkedIn GenAI Product CN",
+      "query": "GenAI Product Manager",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-genai-product-cn.browser_export.json",
+      "jobs_count": 8,
+      "freshest_published_at": "2026-06-09",
+      "oldest_published_at": "2026-02-25"
+    },
+    {
+      "task_id": "linkedin-ai-product-manager-zh-cn",
+      "task_name": "LinkedIn AI Product Manager ZH CN",
+      "query": "AI产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-ai-product-manager-zh-cn.browser_export.json",
+      "jobs_count": 3,
+      "freshest_published_at": "2026-06-15",
+      "oldest_published_at": "2026-06-02"
+    },
+    {
+      "task_id": "linkedin-genai-product-zh-cn",
+      "task_name": "LinkedIn Gen-AI Product ZH CN",
+      "query": "Gen-AI产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-genai-product-zh-cn.browser_export.json",
+      "jobs_count": 1,
+      "freshest_published_at": "2026-06-01",
+      "oldest_published_at": "2026-06-01"
+    },
+    {
+      "task_id": "linkedin-aigc-product-zh-cn",
+      "task_name": "LinkedIn AIGC Product ZH CN",
+      "query": "AIGC产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "missing",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-aigc-product-zh-cn.browser_export.json",
+      "jobs_count": 0,
+      "freshest_published_at": null,
+      "oldest_published_at": null
+    },
+    {
+      "task_id": "linkedin-model-product-zh-cn",
+      "task_name": "LinkedIn Model Product ZH CN",
+      "query": "大模型产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "missing",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-model-product-zh-cn.browser_export.json",
+      "jobs_count": 0,
+      "freshest_published_at": null,
+      "oldest_published_at": null
+    },
+    {
+      "task_id": "linkedin-agent-product-zh-cn",
+      "task_name": "LinkedIn Agent Product ZH CN",
+      "query": "智能体产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-agent-product-zh-cn.browser_export.json",
+      "jobs_count": 2,
+      "freshest_published_at": "2026-06-14",
+      "oldest_published_at": "2026-06-07"
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-zh-cn",
+      "task_name": "LinkedIn AI Platform Product ZH CN",
+      "query": "AI平台产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-ai-platform-product-zh-cn.browser_export.json",
+      "jobs_count": 1,
+      "freshest_published_at": "2026-06-11",
+      "oldest_published_at": "2026-06-11"
+    },
+    {
+      "task_id": "linkedin-llm-product-zh-cn",
+      "task_name": "LinkedIn LLM Product ZH CN",
+      "query": "LLM产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-llm-product-zh-cn.browser_export.json",
+      "jobs_count": 8,
+      "freshest_published_at": "2026-06-16",
+      "oldest_published_at": "2026-04-18"
+    },
+    {
+      "task_id": "linkedin-generative-ai-product-zh-cn",
+      "task_name": "LinkedIn Generative AI Product ZH CN",
+      "query": "生成式AI产品经理",
+      "expected_role_bucket": "pm_core",
+      "status": "empty",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-generative-ai-product-zh-cn.browser_export.json",
+      "jobs_count": 0,
+      "freshest_published_at": null,
+      "oldest_published_at": null
+    },
+    {
+      "task_id": "linkedin-agent-platform-product-zh-cn",
+      "task_name": "LinkedIn Agent Platform Product ZH CN",
+      "query": "Agent平台产品",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-agent-platform-product-zh-cn.browser_export.json",
+      "jobs_count": 8,
+      "freshest_published_at": "2026-06-10",
+      "oldest_published_at": "2026-04-18"
+    },
+    {
+      "task_id": "linkedin-agentic-platform-product-zh-cn",
+      "task_name": "LinkedIn Agentic Platform Product ZH CN",
+      "query": "智能体平台产品",
+      "expected_role_bucket": "pm_core",
+      "status": "empty",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-agentic-platform-product-zh-cn.browser_export.json",
+      "jobs_count": 0,
+      "freshest_published_at": null,
+      "oldest_published_at": null
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-cn",
+      "task_name": "LinkedIn AI Platform Product CN",
+      "query": "AI Platform Product Manager",
+      "expected_role_bucket": "pm_core",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-ai-platform-product-cn.browser_export.json",
+      "jobs_count": 8,
+      "freshest_published_at": "2026-06-11",
+      "oldest_published_at": "2026-01-04"
+    },
+    {
+      "task_id": "linkedin-ai-product-ops-cn",
+      "task_name": "LinkedIn AI Product Ops CN",
+      "query": "AI Product Operations",
+      "expected_role_bucket": "ops_adjacent",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-ai-product-ops-cn.browser_export.json",
+      "jobs_count": 6,
+      "freshest_published_at": "2026-06-06",
+      "oldest_published_at": "2026-05-25"
+    },
+    {
+      "task_id": "linkedin-agent-engineer-cn",
+      "task_name": "LinkedIn Agent Engineer CN",
+      "query": "Agent Engineer",
+      "expected_role_bucket": "engineering_adjacent",
+      "status": "empty",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-agent-engineer-cn.browser_export.json",
+      "jobs_count": 0,
+      "freshest_published_at": null,
+      "oldest_published_at": null
+    },
+    {
+      "task_id": "linkedin-applied-ai-engineer-cn",
+      "task_name": "LinkedIn Applied AI Engineer CN",
+      "query": "Applied AI Engineer",
+      "expected_role_bucket": "engineering_adjacent",
+      "status": "ready",
+      "export_file": "/Users/youngkit/Documents/codex_project/projects/job-tracker/sources/linkedin-applied-ai-engineer-cn.browser_export.json",
+      "jobs_count": 6,
+      "freshest_published_at": "2026-06-14",
+      "oldest_published_at": "2026-05-04"
+    }
+  ],
+  "summary": {
+    "task_count": 18,
+    "exported_task_count": 16,
+    "missing_tasks": [
+      "linkedin-aigc-product-zh-cn",
+      "linkedin-model-product-zh-cn"
+    ],
+    "empty_tasks": [
+      "linkedin-generative-ai-product-zh-cn",
+      "linkedin-agentic-platform-product-zh-cn",
+      "linkedin-agent-engineer-cn"
+    ]
+  }
+}

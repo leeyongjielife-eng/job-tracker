@@ -1,0 +1,75 @@
+{
+  "task_id": "linkedin-agent-platform-product-zh-cn",
+  "task_name": "LinkedIn Agent Platform Product ZH CN",
+  "query": "Agent平台产品",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Product Manager — GenAI & Cloud Platform",
+      "company": "Walmart Marketplace",
+      "location": "深圳",
+      "summary": "Real page summary: About the Role Walmart Global eCommerce China (GEC China) is accelerating its next-generation technology transformation, anchored by Generative AI and a strategic migration to China-local cloud infrastructure. We are looking for an exceptional Product Manager, GenAI & Cloud Platform who sits at the intersection of cutting-edge AI technology, enterprise-scale cloud engineering, and business impact. This is not a theoretical AI role — we need someone who has shipped real GenAI products in enterprise environments, who understands the nuances of the China AI ecosystem (from foundational models to regulatory constraints), and who can navigate complex multi-cloud vendor relationships (Alibaba Cloud, Tencent Cloud, Volcengine, and beyond). You will own the product strategy for our GenAI and cloud platform layer, partnering with engineering, data science, business, and security teams across China and globally. What You Will Own 、 • Define and drive the product roadmap for Walmart GEC China's G",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=2&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=%2BJ%2Fp61%2B8CTv9Kh32etQZaA%3D%3D",
+      "published_at": "2026-04-18"
+    },
+    {
+      "title": "Head of Data Platform Product (AI-Native Transformation)",
+      "company": "蚂蚁集团",
+      "location": "杭州",
+      "summary": "Real page summary: Position Overview As the Head of Data Platform Product, you will lead the strategic evolution of our enterprise data infrastructure into the AGI era. This is not a maintenance role; it is a transformative leadership position. You will challenge traditional data warehousing paradigms and drive AI-native thinking across our mature data ecosystem. Your mission is to redefine how data assets are managed, processed, and productized, building the end-to-end data pipelines, infrastructure, and operational models required to power large-scale model training and AI-driven applications at scale. Key Responsibilities： 1. AI-Native Strategy & Paradigms Shift Drive the strategic transformation of a mature data platform, shifting the organization from traditional BI/Analytics architectures to an AI-Native data ecosystem.",
+      "link": "https://cn.linkedin.com/jobs/view/head-of-data-platform-product-ai-native-transformation-at-ant-group-4421474240?position=3&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=8MwrHTU40395H%2BWVu%2BWqcw%3D%3D",
+      "published_at": "2026-06-03"
+    },
+    {
+      "title": "Product Lead, AI-Native (Special Projects)",
+      "company": "ShopBack",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-lead-ai-native-special-projects-at-shopback-4372608956?position=4&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=k3gA6GA2tDOXhYhwxAQATw%3D%3D",
+      "published_at": "2026-06-10"
+    },
+    {
+      "title": "Sr. Associate Director, Software Engineering (AI Agent Platform Product Management)",
+      "company": "汇丰",
+      "location": "广州",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/sr-associate-director-software-engineering-ai-agent-platform-product-management-at-hsbc-4425403106?position=12&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=ecGHQD94xBrBscxp8A2vhw%3D%3D",
+      "published_at": "2026-06-10"
+    },
+    {
+      "title": "Product Line Leader",
+      "company": "Whale",
+      "location": "杭州",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-line-leader-at-whale-4418067670?position=14&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=Q40UmNT5JIw7U6PLujJjfg%3D%3D",
+      "published_at": "2026-05-27"
+    },
+    {
+      "title": "Product Manager",
+      "company": "Agora",
+      "location": "上海市",
+      "summary": "Real page summary: Agora is the global leader in real-time engagement, providing developers with simple, flexible, and powerful APIs to embed real-time conversational AI, voice, video, interactive live streaming, and chat into their applications and IoT devices. Headquartered in Santa Clara, CA, Agora is trusted by over 1,700 leading organizations across the globe to power best-in-class real-time experiences from social media and live shopping to education and telehealth. About The Role Lead the strategy, and roadmap for Agora’s real-time communication and cloud services products, driving adoption across live streaming, voice, video, recording, and real-time messaging experiences. Partner closely with customers and cross-functional teams to validate use cases, launch impactful features, and ensure compliant, and measurable product outcomes. What You'll Do Core Responsibilities Support the strategy and roadmap for Agora’s products and solutions with a focus on Real-time Communication SDKs and Cloud Servic",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-agora-4370510786?position=16&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=uywWBXcjqU8NVpKMr%2FmTEw%3D%3D",
+      "published_at": "2026-05-18"
+    },
+    {
+      "title": "Data and Innovation Group Product Leader",
+      "company": "National Basketball Association (NBA)",
+      "location": "上海市",
+      "summary": "Real page summary: Develop and implement a comprehensive digital product strategy tailored to the Chinese market, leveraging insights from fan behavior and market trends. Lead the product development lifecycle, including ideation, design, development, testing, and launch of new digital products and features. Own and optimize the NBA China online product matrix, including: − NBA App (mobile and desktop) − WeChat Mini-Program (official NBA accounts and fan engagement tools) − Upcoming products (e.g., AI enhancements) Collaborate with cross-functional teams (e.g., engineering, design, marketing) to ensure seamless execution and delivery of high-quality digital products. Drive innovation by exploring emerging technologies (e.g., AI, AR/VR, mobile apps) to enhance fan experiences. Act as the APAC stakeholder and contributor to HQ-led AI exploration in sports media and copyright management.",
+      "link": "https://cn.linkedin.com/jobs/view/data-and-innovation-group-product-leader-at-national-basketball-association-nba-4391668003?position=19&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=B%2F5mXAfOsjJrvAvrroyMdQ%3D%3D",
+      "published_at": "2026-06-03"
+    },
+    {
+      "title": "AI产品经理",
+      "company": "Confidential",
+      "location": "杭州",
+      "summary": "Real page summary: 我们是全球最早也是最成熟的数字资产平台之一，服务于全球数千万用户。我们始终位列全球Top交易所之列，提供涵盖数千种数字资产的全面交易和财富管理产品。我们拥有遍布全球主要金融中心的数千名员工，秉持远程优先、高度自主的企业文化，吸引着那些在快节奏、高挑战性环境中蓬勃发展的优秀人才。 作为平台 AI 基础设施与算力调度的“交通指挥官”，你将主导 AI 模型中转站及 Multi-LLM 聚合平台的整体规划与矩阵演进。该岗位直接面对多模型适配、高并发流量调度、金融级Token计费等高壁垒场景。你将拥有极高的架构设计自主权，与顶尖的算法专家、基础架构（Infra）工程师和数据科学家协同攻坚，亲手打造一个高可用、低延迟、具备强商业化变现能力的全球化 AI 路由中台。 多模型聚合与标准化（Multi-LLM Hub）：负责海量通用大模型（如 OpenAI, Anthropic, DeepSeek 等）的标准化接入、适配与封装，统一输出高兼容性的标准化 API 接口，彻底解决多模型版本兼容与调用不一致痛点。 智能流量调度（Smart Routing & High Availability）：设计并持续迭代 AI 流量路由策略，主导智能路由、动态负载均衡（Load Balancing）、并发限流（Rate Limiting）、模型降级与故障熔断机制的设计，保障平台在极端高并发下的绝对稳定性。 商业化中台与权限管控（Token Metering & Monetization）：构建企业级 AI 权限体系、多租户账号体系、调用配额管理以及精细化的 Token 计费账单（Metering & Billing）、日志审计与风控防刷系统，支撑 B 端企业与 C 端用户的大规模商业化接入。 全生命周期推进（Infra PMO）：协同研发、测试、运维团队高效推进版本迭代，梳理全链路业务流，跟进线上问题闭环，持续优化中转平台的吞吐量性能与综合成本结构（Cost Optimization）。",
+      "link": "https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-confidential-4422188956?position=21&pageNum=0&refId=EnDMfXOQslU4GvmWUKwfaA%3D%3D&trackingId=UBboa3lN1UCLNA2vFcfCKw%3D%3D",
+      "published_at": "2026-06-03"
+    }
+  ]
+}

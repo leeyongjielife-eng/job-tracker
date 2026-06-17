@@ -1,0 +1,10 @@
+{
+  "task_id": "linkedin-agent-engineer-cn",
+  "task_name": "LinkedIn Agent Engineer CN",
+  "query": "Agent Engineer",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Engineer&location=China&position=1&pageNum=0",
+  "jobs": []
+}

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "description": "LinkedIn 浏览器态导出规范。每个搜索任务单独导出，后续可再合并。",
+  "export_rules": {
+    "sampling_principle": "不设硬数量门槛，优先抓高质量且明显相关的岗位；每个搜索项抓到结果开始明显重复或明显跑偏时即可停止。",
+    "sort_preference": "Most recent if available, otherwise default relevance sort",
+    "date_window_hint": "优先抓最近 7 天；首次人工补样时可以接受最近 30 天",
+    "dedupe_note": "同公司同岗位跨来源、跨地区会在主流水线再去重，这里先尽量多抓原始样本",
+    "summary_priority": "后续规则已经开始允许弱 AI 信号的泛 PM 进入候选，因此 summary 不再是可有可无字段；只要卡片上能看到一句简介、标签或能力描述，就应尽量抄入 summary。"
+  },
+  "required_fields": [
+    "title",
+    "company",
+    "location",
+    "summary",
+    "link",
+    "published_at",
+    "source",
+    "source_type"
+  ],
+  "field_rules": {
+    "title": "职位标题原文",
+    "company": "公司名原文",
+    "location": "地点原文，保留 LinkedIn 页面展示值",
+    "summary": "职位卡片摘要；优先记录能体现 AI 语境的短句，例如 agent、copilot、model platform、AI tools、workflow、multimodal、prompt、RAG、inference 等。只有页面确实没有任何摘要时才留空。",
+    "link": "LinkedIn 职位详情链接，优先保留 jobs/view 链接",
+    "published_at": "优先保存页面上可见发布日期；推荐 ISO 8601，至少保证可被解析",
+    "source": "固定写 LinkedIn Browser Search",
+    "source_type": "固定写 linkedin_manual"
+  },
+  "task_overrides": [
+    {
+      "task_id": "linkedin-ai-product-manager-cn",
+      "priority": "high",
+      "reason": "PM 核心池，优先级最高"
+    },
+    {
+      "task_id": "linkedin-agent-product-cn",
+      "priority": "high",
+      "reason": "补 agent 相关 PM 岗位，和核心 PM 查询互补"
+    },
+    {
+      "task_id": "linkedin-ai-operations-cn",
+      "priority": "medium",
+      "reason": "相邻岗位池，只做补充，不需要和 PM 核心池一样大"
+    },
+    {
+      "task_id": "linkedin-genai-product-cn",
+      "priority": "high",
+      "reason": "补强生成式 AI PM 核心池，信号通常比普通 PM 更强"
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-cn",
+      "priority": "high",
+      "reason": "补强平台型 AI PM，贴近模型平台、工具链、工作流产品"
+    },
+    {
+      "task_id": "linkedin-ai-product-ops-cn",
+      "priority": "medium",
+      "reason": "补 AI 产品运营和产品交付相邻岗位，但不让其盖过 PM 核心池"
+    },
+    {
+      "task_id": "linkedin-agent-engineer-cn",
+      "priority": "medium",
+      "reason": "少量保留明确 agent 工程岗，作为补充池"
+    },
+    {
+      "task_id": "linkedin-applied-ai-engineer-cn",
+      "priority": "medium",
+      "reason": "少量保留 Applied AI Engineer 作为落地能力补充池"
+    }
+  ],
+  "output_convention": {
+    "single_task_example": "sources/linkedin_jobs_browser_export.json",
+    "merge_strategy": "先按单个搜索任务导出，再统一合并为一个数组文件送入 linkedin_ingest.py"
+  },
+  "operator_notes": {
+    "why_summary_matters": "当前主流水线已对泛 Product Manager 放松到允许弱 AI 信号进入候选，但判断这类弱信号主要依赖 title + summary。若 summary 为空，很多本来值得保留的岗位仍会被过滤。",
+    "minimum_capture_rule": "如果标题不是显式 AI PM，但职位卡片中出现 AI/agent/模型/工具链/工作流等相关描述，必须把那句文本写进 summary。"
+  }
+}

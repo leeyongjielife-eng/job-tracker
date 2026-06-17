@@ -1,0 +1,41 @@
+title: AI产品运营经理
+company: 平安健康保险股份有限公司
+location: 深圳
+published_at: 2026-05-25
+link: https://cn.linkedin.com/jobs/view/ai%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E7%BB%8F%E7%90%86-at-%E5%B9%B3%E5%AE%89%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%A9%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4418982426
+summary: AI 产品运营，保险业务场景。
+
+title: AI服务运营
+company: 沃尔玛(中国)投资有限公司
+location: 深圳
+published_at: 2026-06-06
+link: https://cn.linkedin.com/jobs/view/ai%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5-at-%E6%B2%83%E5%B0%94%E7%8E%9B-%E4%B8%AD%E5%9B%BD-%E6%8A%95%E8%B5%84%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421504326
+summary: AI 服务运营，零售业务场景。
+
+title: Senior AI Application Operations Specialist
+company: Noah Holdings
+location: 上海市, 中国
+published_at: 2026-05-27
+link: https://cn.linkedin.com/jobs/view/senior-ai-application-operations-specialist-at-noah-holdings-4418558727
+summary: AI application operations specialist.
+
+title: AI特效模版运营/AI平台运营
+company: 北京位来小猎科技有限公司
+location: 北京市
+published_at: 2026-06-02
+link: https://cn.linkedin.com/jobs/view/ai%E7%89%B9%E6%95%88%E6%A8%A1%E7%89%88%E8%BF%90%E8%90%A5-ai%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%90%A5-at-%E5%8C%97%E4%BA%AC%E4%BD%8D%E6%9D%A5%E5%B0%8F%E7%8C%8E%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4423742728
+summary: AI 平台运营，模板与平台场景。
+
+title: AI Operation
+company: 上海田明商务信息咨询有限公司
+location: 上海市
+published_at: 2026-05-29
+link: https://cn.linkedin.com/jobs/view/ai-operation-at-%E4%B8%8A%E6%B5%B7%E7%94%B0%E6%98%8E%E5%95%86%E5%8A%A1%E4%BF%A1%E6%81%AF%E5%92%A8%E8%AF%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421724454
+summary: AI operation.
+
+title: AI 产品运营经理（ToB / 内部产品方向）
+company: Hays
+location: 上海市, 中国
+published_at: 2026-05-26
+link: https://cn.linkedin.com/jobs/view/ai-%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5%E7%BB%8F%E7%90%86%EF%BC%88tob-%E5%86%85%E9%83%A8%E4%BA%A7%E5%93%81%E6%96%B9%E5%90%91%EF%BC%89-at-hays-4419171188
+summary: AI 产品运营经理，ToB / 内部产品方向。

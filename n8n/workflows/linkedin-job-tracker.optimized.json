@@ -1,0 +1,574 @@
+{
+  "name": "LinkedIn Job Tracker Optimized",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -160
+      ],
+      "id": "6ca35b7e-04d3-4b7e-9bd3-4e5f6ab4f7b0",
+      "name": "Manual Trigger"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        32
+      ],
+      "id": "f5ab5457-4ab0-4671-a071-7fe9046609df",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/JW0oZ1hTiZd58T99.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        -352
+      ],
+      "id": "4dd964eb-2612-4913-a37a-cf66b23531ff",
+      "name": "LinkedIn AI Product CN"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/gBCjoPUN9cGt17d9.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        -224
+      ],
+      "id": "b40b9b62-f40a-4a9f-8bda-32b3b532b4f8",
+      "name": "LinkedIn AI Project Manager"
+    },
+    {
+      "parameters": {
+        "url": "https://www.google.com/alerts/feeds/13601120680475817092/16302618676151626384",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        -96
+      ],
+      "id": "2d417d5b-9ba8-450d-ae37-d75e1e2665be",
+      "name": "Google Alert AI PM"
+    },
+    {
+      "parameters": {
+        "url": "https://www.google.com/alerts/feeds/13601120680475817092/17119959916777858017",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        32
+      ],
+      "id": "0a57b204-32ae-46ee-b245-8b890134eb4d",
+      "name": "Google Alert AI Ops China"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/lAXlAekAHx0uFpbr.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        160
+      ],
+      "id": "9c4bd5cc-f8d9-4773-a8b8-bc789596fd97",
+      "name": "LinkedIn AI Operations"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/fZB5650QaIpLjukV.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        288
+      ],
+      "id": "4a596d98-67cf-4da0-b8ff-05924c85ff78",
+      "name": "LinkedIn AI PM"
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        544,
+        -16
+      ],
+      "id": "7c0efb74-0712-430c-aa95-7f7a08832d91",
+      "name": "Merge Feeds"
+    },
+    {
+      "parameters": {
+        "jsCode": "const LOOKBACK_DAYS = 14;\nconst POSITIVE_KEYWORDS = [\n  'ai',\n  'artificial intelligence',\n  'agent',\n  'automation',\n  'product',\n  'operations',\n  'program manager',\n  'project manager',\n  'pm',\n  'apm',\n  'hiring',\n  'growth',\n  'strategy',\n  'platform',\n  'llm',\n  'genai',\n  'machine learning',\n  'workflow'\n];\nconst NEGATIVE_KEYWORDS = [\n  'intern',\n  'adjunct',\n  'principal investigator',\n  'faculty',\n  'registered nurse',\n  'therapist',\n  'field technician'\n];\n\nfunction cleanText(value) {\n  return String(value || '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\nfunction canonicalizeUrl(rawUrl) {\n  if (!rawUrl) return '';\n  try {\n    const url = new URL(rawUrl);\n    [\n      'utm_source',\n      'utm_medium',\n      'utm_campaign',\n      'utm_term',\n      'utm_content',\n      'trk',\n      'trackingId'\n    ].forEach((key) => url.searchParams.delete(key));\n    return url.toString();\n  } catch {\n    return String(rawUrl).trim();\n  }\n}\n\nfunction extractCompany(title) {\n  const patterns = [\n    / at ([^-|]+)/i,\n    / - ([^-|]+)/,\n    / \\| ([^|]+)$/\n  ];\n\n  for (const pattern of patterns) {\n    const match = String(title || '').match(pattern);\n    if (match?.[1]) return cleanText(match[1]);\n  }\n\n  return '';\n}\n\nfunction extractLocation(title, summary) {\n  const haystack = `${title} ${summary}`;\n  const patterns = [\n    /(remote)/i,\n    /(beijing|shanghai|shenzhen|guangzhou|hangzhou)/i,\n    /(singapore)/i,\n    /(san francisco|new york|seattle|austin)/i\n  ];\n\n  for (const pattern of patterns) {\n    const match = haystack.match(pattern);\n    if (match?.[1]) return match[1];\n  }\n\n  return '';\n}\n\nconst now = Date.now();\nconst seen = new Set();\nconst results = [];\n\nfor (const item of items) {\n  const title = cleanText(item.json.title || item.json.name);\n  const summary = cleanText(item.json.contentSnippet || item.json.content || item.json.summary || item.json.description);\n  const rawLink = item.json.link || item.json.guid || '';\n  const jobUrl = canonicalizeUrl(rawLink);\n  const publishedAt = item.json.isoDate || item.json.pubDate || item.json.published || item.json.updated || new Date().toISOString();\n  const publishedTimestamp = Date.parse(publishedAt);\n  const daysOld = Number.isNaN(publishedTimestamp) ? 999 : (now - publishedTimestamp) / 86400000;\n  const haystack = `${title} ${summary}`.toLowerCase();\n  const positiveScore = POSITIVE_KEYWORDS.filter((keyword) => haystack.includes(keyword)).length;\n  const negativeScore = NEGATIVE_KEYWORDS.filter((keyword) => haystack.includes(keyword)).length;\n  const relevanceScore = positiveScore - (negativeScore * 2);\n  const company = extractCompany(title);\n  const location = extractLocation(title, summary);\n  const sourceName = cleanText(item.json.creator || item.json.author || item.json.feedTitle || item.json.source || item.json.title || 'Unknown source');\n  const keywordTag = title.toLowerCase().includes('operations') ? 'ai-operations' : title.toLowerCase().includes('project') ? 'ai-project-manager' : 'ai-product-manager';\n  const uniqueKey = `${jobUrl}::${publishedAt}`;\n\n  if (!title || !jobUrl) continue;\n  if (daysOld > LOOKBACK_DAYS) continue;\n  if (relevanceScore < 1) continue;\n  if (seen.has(uniqueKey)) continue;\n\n  seen.add(uniqueKey);\n  results.push({\n    json: {\n      title,\n      company,\n      location,\n      summary,\n      source_name: sourceName,\n      source_url: jobUrl,\n      published_at: publishedAt,\n      days_old: Number(daysOld.toFixed(1)),\n      keyword_tag: keywordTag,\n      relevance_score: relevanceScore,\n      status: 'new',\n      notes: '',\n      applied_at: '',\n      unique_key: uniqueKey,\n      collected_at: new Date().toISOString()\n    }\n  });\n}\n\nresults.sort((a, b) => Date.parse(b.json.published_at) - Date.parse(a.json.published_at));\nreturn results;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        -16
+      ],
+      "id": "4c25fd9f-9c39-46c7-9700-0d03368a95a0",
+      "name": "Normalize And Score Jobs"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "dcb16fc3-a8d2-4ce0-83d7-b3b1c2c295e8",
+              "leftValue": "={{ $json.relevance_score }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        1040,
+        -16
+      ],
+      "id": "5dd19f53-c133-47f8-9bde-2dfd0f87593a",
+      "name": "Keep Relevant Jobs"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_SHEET_ID/edit#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Jobs",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Title": "={{ $json.title }}",
+            "Company": "={{ $json.company }}",
+            "Location": "={{ $json.location }}",
+            "Summary": "={{ $json.summary }}",
+            "Job URL": "={{ $json.source_url }}",
+            "Source": "={{ $json.source_name }}",
+            "Keyword Tag": "={{ $json.keyword_tag }}",
+            "Published At": "={{ $json.published_at }}",
+            "Days Old": "={{ $json.days_old }}",
+            "Relevance Score": "={{ $json.relevance_score }}",
+            "Status": "={{ $json.status }}",
+            "Applied At": "={{ $json.applied_at }}",
+            "Notes": "={{ $json.notes }}",
+            "Unique Key": "={{ $json.unique_key }}",
+            "Collected At": "={{ $json.collected_at }}"
+          },
+          "matchingColumns": [
+            "Unique Key"
+          ],
+          "schema": [
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Summary",
+              "displayName": "Summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Job URL",
+              "displayName": "Job URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Keyword Tag",
+              "displayName": "Keyword Tag",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Published At",
+              "displayName": "Published At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Days Old",
+              "displayName": "Days Old",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Relevance Score",
+              "displayName": "Relevance Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Applied At",
+              "displayName": "Applied At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "Unique Key",
+              "displayName": "Unique Key",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Collected At",
+              "displayName": "Collected At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1280,
+        -16
+      ],
+      "id": "779e7cec-9a5c-4e67-89af-396dbfe7fcbc",
+      "name": "Append Or Update Sheet Row"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "LinkedIn AI Product CN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LinkedIn AI Project Manager",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Alert AI PM",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Alert AI Ops China",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LinkedIn AI Operations",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LinkedIn AI PM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "LinkedIn AI Product CN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LinkedIn AI Project Manager",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Alert AI PM",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Alert AI Ops China",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LinkedIn AI Operations",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LinkedIn AI PM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LinkedIn AI Product CN": {
+      "main": [
+        [
+          {
+            "node": "Merge Feeds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LinkedIn AI Project Manager": {
+      "main": [
+        [
+          {
+            "node": "Merge Feeds",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Alert AI PM": {
+      "main": [
+        [
+          {
+            "node": "Merge Feeds",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Google Alert AI Ops China": {
+      "main": [
+        [
+          {
+            "node": "Merge Feeds",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "LinkedIn AI Operations": {
+      "main": [
+        [
+          {
+            "node": "Merge Feeds",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "LinkedIn AI PM": {
+      "main": [
+        [
+          {
+            "node": "Merge Feeds",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Merge Feeds": {
+      "main": [
+        [
+          {
+            "node": "Normalize And Score Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize And Score Jobs": {
+      "main": [
+        [
+          {
+            "node": "Keep Relevant Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keep Relevant Jobs": {
+      "main": [
+        [
+          {
+            "node": "Append Or Update Sheet Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "a6df3c8c-fd12-4db8-a9a0-0ef710bd05eb",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "id": "U3LqvN6xkHdS4V7M",
+  "tags": [
+    {
+      "name": "n8n"
+    },
+    {
+      "name": "linkedin"
+    },
+    {
+      "name": "job-tracker"
+    }
+  ]
+}

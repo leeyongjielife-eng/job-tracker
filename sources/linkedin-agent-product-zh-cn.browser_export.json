@@ -1,0 +1,27 @@
+{
+  "task_id": "linkedin-agent-product-zh-cn",
+  "task_name": "LinkedIn Agent Product ZH CN",
+  "query": "智能体产品经理",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=%E6%99%BA%E8%83%BD%E4%BD%93%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Product Lead, AI-Native (Special Projects)",
+      "company": "ShopBack",
+      "location": "深圳",
+      "summary": "Real page summary: build first versions of AI agents and multi-agent AI solutions, using LangGraph and leading-edge LLMs; combine product discovery, merchant pain-point research, AI-native product thinking, and hands-on system design across agent backends and user experience.",
+      "link": "https://cn.linkedin.com/jobs/view/product-lead-ai-native-special-projects-at-shopback-4372608956?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=fsXdmxmhz55NGIHAkclEaA%3D%3D",
+      "published_at": "2026-06-07"
+    },
+    {
+      "title": "AI智能体与低代码平台 产品负责人",
+      "company": "沃尔玛(中国)投资有限公司",
+      "location": "深圳",
+      "summary": "Visible page evidence confirms a Shenzhen AI agent and low-code platform product lead role. The title and page context strongly indicate ownership over AI agent platform capabilities and low-code product direction, but the detailed JD body is partially hidden behind LinkedIn login prompts and should be enriched later if we keep it.",
+      "link": "https://cn.linkedin.com/jobs/view/ai%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%8E%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%B9%B3%E5%8F%B0-%E4%BA%A7%E5%93%81%E8%B4%9F%E8%B4%A3%E4%BA%BA-at-%E6%B2%83%E5%B0%94%E7%8E%9B-%E4%B8%AD%E5%9B%BD-%E6%8A%95%E8%B5%84%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4425705654?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=XNaQRu21ZfNGuhbDbYQaZQ%3D%3D",
+      "published_at": "2026-06-14"
+    }
+  ]
+}

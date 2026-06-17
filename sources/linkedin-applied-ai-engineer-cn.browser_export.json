@@ -1,0 +1,59 @@
+{
+  "task_id": "linkedin-applied-ai-engineer-cn",
+  "task_name": "LinkedIn Applied AI Engineer CN",
+  "query": "Applied AI Engineer",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=Applied%20AI%20Engineer&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Algorithm Engineer",
+      "company": "TPV",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/algorithm-engineer-at-tpv-4408995538?position=1&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=%2FCNfIKluhqmsuur5GHTz0w%3D%3D",
+      "published_at": "2026-05-05"
+    },
+    {
+      "title": "Applied AI Engineer",
+      "company": "A1",
+      "location": "中国",
+      "summary": "Real page summary: build a proactive AI assistant for everyday workflows, focusing on end-to-end AI feature delivery across prompts, tools, memory, agent workflows, reliability, evaluation, inference/serving, and real-world task completion rather than demo-only behavior.",
+      "link": "https://cn.linkedin.com/jobs/view/applied-ai-engineer-at-a1-4403896162?position=2&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=gGITKvX%2B3WltEwoTe2ZIQA%3D%3D",
+      "published_at": "2026-06-14"
+    },
+    {
+      "title": "AI Engineer",
+      "company": "Metaprise",
+      "location": "深圳",
+      "summary": "Real page summary: build AI-agent powered financial systems across AR/AP automation, SmartFlow, and cash-management workflows; the role centers on LangChain/LangGraph, multi-agent systems, RAG, vector retrieval, OCR, multimodal document processing, prompt engineering, and AI integration with ERP APIs.",
+      "link": "https://cn.linkedin.com/jobs/view/ai-engineer-at-metaprise-4420928311?position=3&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=iPDldj6JxH%2BtuVQD%2FfTFfw%3D%3D",
+      "published_at": "2026-05-04"
+    },
+    {
+      "title": "Machine Learning Engineer",
+      "company": "MeshyAI",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/machine-learning-engineer-at-meshyai-4392589317?position=4&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=DWWsqIBL%2B04fXvymhnI6qA%3D%3D",
+      "published_at": "2026-05-30"
+    },
+    {
+      "title": "Generative AI Algorithms Engineer",
+      "company": "高通",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/generative-ai-algorithms-engineer-at-qualcomm-4422879801?position=5&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=vpizLdAHSRtUfEvG5ORX7A%3D%3D",
+      "published_at": "2026-06-01"
+    },
+    {
+      "title": "Generative AI - ML System Engineering",
+      "company": "MeshyAI",
+      "location": "上海市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/generative-ai-ml-system-engineering-at-meshyai-4415347669?position=6&pageNum=0&refId=eqEHvNtsKgtrY0zvcCksxQ%3D%3D&trackingId=HIsXmJuQPAzRtPBo9%2FttYw%3D%3D",
+      "published_at": "2026-06-05"
+    }
+  ]
+}

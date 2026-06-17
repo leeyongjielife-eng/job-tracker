@@ -1,0 +1,200 @@
+[
+  {
+    "id": "linkedin-ai-product-manager-cn",
+    "name": "LinkedIn AI Product Manager CN",
+    "query": "AI Product Manager",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Manager&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "当前浏览器已验证过这类 URL 可以直接进入 LinkedIn Jobs 搜索页。"
+  },
+  {
+    "id": "linkedin-agent-product-cn",
+    "name": "LinkedIn Agent Product CN",
+    "query": "Agent Product Manager",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Product%20Manager&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补 agent 方向 PM 岗位，和 AI Product Manager 查询互补。"
+  },
+  {
+    "id": "linkedin-ai-operations-cn",
+    "name": "LinkedIn AI Ops CN",
+    "query": "AI Operations",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Operations&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "ops_adjacent",
+    "status": "ready_for_manual_browser_export",
+    "notes": "这是相邻岗位池，不会像 PM 核心池那样保留得那么多。"
+  },
+  {
+    "id": "linkedin-genai-product-cn",
+    "name": "LinkedIn GenAI Product CN",
+    "query": "GenAI Product Manager",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=GenAI%20Product%20Manager&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补强生成式 AI 方向 PM，通常比普通 PM 结果更聚焦。"
+  },
+  {
+    "id": "linkedin-ai-product-manager-zh-cn",
+    "name": "LinkedIn AI Product Manager ZH CN",
+    "query": "AI产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "中文 AI PM 主池，补当前英文关键词层容易漏掉的中文标题岗位。"
+  },
+  {
+    "id": "linkedin-genai-product-zh-cn",
+    "name": "LinkedIn Gen-AI Product ZH CN",
+    "query": "Gen-AI产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Gen-AI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补 Gen-AI 中文标题岗位；你当前发现的广州岗位就属于这一类。"
+  },
+  {
+    "id": "linkedin-aigc-product-zh-cn",
+    "name": "LinkedIn AIGC Product ZH CN",
+    "query": "AIGC产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AIGC%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补 AIGC 中文岗位。"
+  },
+  {
+    "id": "linkedin-model-product-zh-cn",
+    "name": "LinkedIn Model Product ZH CN",
+    "query": "大模型产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补大模型方向中文 PM 岗。"
+  },
+  {
+    "id": "linkedin-agent-product-zh-cn",
+    "name": "LinkedIn Agent Product ZH CN",
+    "query": "智能体产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=%E6%99%BA%E8%83%BD%E4%BD%93%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补智能体产品中文标题岗位。"
+  },
+  {
+    "id": "linkedin-ai-platform-product-zh-cn",
+    "name": "LinkedIn AI Platform Product ZH CN",
+    "query": "AI平台产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补 AI 平台中文 PM 岗。"
+  },
+  {
+    "id": "linkedin-llm-product-zh-cn",
+    "name": "LinkedIn LLM Product ZH CN",
+    "query": "LLM产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=LLM%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补直接以 LLM 为主标签的中文 PM 岗。"
+  },
+  {
+    "id": "linkedin-generative-ai-product-zh-cn",
+    "name": "LinkedIn Generative AI Product ZH CN",
+    "query": "生成式AI产品经理",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=%E7%94%9F%E6%88%90%E5%BC%8FAI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补更本土化表达的生成式 AI 中文 PM 岗。"
+  },
+  {
+    "id": "linkedin-agent-platform-product-zh-cn",
+    "name": "LinkedIn Agent Platform Product ZH CN",
+    "query": "Agent平台产品",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补英文 Agent + 中文平台产品的混合标题岗位。"
+  },
+  {
+    "id": "linkedin-agentic-platform-product-zh-cn",
+    "name": "LinkedIn Agentic Platform Product ZH CN",
+    "query": "智能体平台产品",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=%E6%99%BA%E8%83%BD%E4%BD%93%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补智能体平台、工作流平台、低代码智能体类中文标题岗位。"
+  },
+  {
+    "id": "linkedin-ai-platform-product-cn",
+    "name": "LinkedIn AI Platform Product CN",
+    "query": "AI Platform Product Manager",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Platform%20Product%20Manager&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "pm_core",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补平台型 AI PM，通常比纯业务 PM 更贴近模型平台、工具链、工作流。"
+  },
+  {
+    "id": "linkedin-ai-product-ops-cn",
+    "name": "LinkedIn AI Product Ops CN",
+    "query": "AI Product Operations",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Operations&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "ops_adjacent",
+    "status": "ready_for_manual_browser_export",
+    "notes": "用于补 AI 产品运营、产品增长、产品交付等相邻岗位。"
+  },
+  {
+    "id": "linkedin-agent-engineer-cn",
+    "name": "LinkedIn Agent Engineer CN",
+    "query": "Agent Engineer",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Engineer&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "engineering_adjacent",
+    "status": "ready_for_manual_browser_export",
+    "notes": "保留少量明确 agent 工程岗位，作为补充池而不是主池。"
+  },
+  {
+    "id": "linkedin-applied-ai-engineer-cn",
+    "name": "LinkedIn Applied AI Engineer CN",
+    "query": "Applied AI Engineer",
+    "region": "China",
+    "source_type": "linkedin_browser_search",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Applied%20AI%20Engineer&location=China&position=1&pageNum=0",
+    "expected_role_bucket": "engineering_adjacent",
+    "status": "ready_for_manual_browser_export",
+    "notes": "保留少量应用型 AI 工程岗位，用于补强 agent / 落地能力相关机会。"
+  }
+]

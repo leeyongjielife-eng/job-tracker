@@ -1,0 +1,19 @@
+{
+  "task_id": "linkedin-ai-platform-product-zh-cn",
+  "task_name": "LinkedIn AI Platform Product ZH CN",
+  "query": "AI平台产品经理",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=AI%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "高级产品经理",
+      "company": "平安健康保险股份有限公司",
+      "location": "深圳",
+      "summary": "Real page summary: own company-level AI platform product build-out and iteration, supporting large-model applications across business scenarios; scope covers model evaluation, training, deployment, launch, and full lifecycle management for model and algorithm platform products.",
+      "link": "https://cn.linkedin.com/jobs/view/%E9%AB%98%E7%BA%A7%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E5%B9%B3%E5%AE%89%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%A9%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4427569726?refId=VHHOLJWolOfkY9dDF4e8kA%3D%3D&trackingId=Hx2QWqkyI8bn6WW3DEc%2FEg%3D%3D",
+      "published_at": "2026-06-11"
+    }
+  ]
+}

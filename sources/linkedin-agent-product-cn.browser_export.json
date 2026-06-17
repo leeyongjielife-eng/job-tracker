@@ -1,0 +1,171 @@
+{
+  "task_id": "linkedin-agent-product-cn",
+  "task_name": "LinkedIn Agent Product CN",
+  "query": "Agent Product Manager",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Product%20Manager&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Product Manager",
+      "company": "OPPO",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-oppo-4330384149?position=1&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=3lbueQdR6aPEWQ2pA6LfmA%3D%3D",
+      "published_at": "2026-01-06"
+    },
+    {
+      "title": "Product Manager_Power tools",
+      "company": "Bosch (China) Investment Ltd.",
+      "location": "长宁区",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-power-tools-at-bosch-china-investment-ltd-4378488030?position=2&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=mvr5fZrXWz7Ks3PqaLxJRw%3D%3D",
+      "published_at": "2026-03-02"
+    },
+    {
+      "title": "Product Manager",
+      "company": "MiniMax",
+      "location": "上海市, 中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-minimax-4395951592?position=3&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=s8wwioSHKLEkOE7IXCKa1Q%3D%3D",
+      "published_at": "2026-04-08"
+    },
+    {
+      "title": "Product Manager (Core Experience)",
+      "company": "LotusFlare",
+      "location": "西安",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-core-experience-at-lotusflare-4376485617?position=4&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=b4yfg0XOtNrViOdaGeXh2Q%3D%3D",
+      "published_at": "2026-06-04"
+    },
+    {
+      "title": "Product Manager",
+      "company": "塔吉特百货",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-target-4419568954?position=5&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=OMzKXTSqTBDurZHQR0TENQ%3D%3D",
+      "published_at": "2026-05-27"
+    },
+    {
+      "title": "Product Manager",
+      "company": "塔吉特百货",
+      "location": "上海市, 中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-target-4419576812?position=6&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=GKTP5ofbn2nsSJndm4dXZA%3D%3D",
+      "published_at": "2026-05-27"
+    },
+    {
+      "title": "Product Manager",
+      "company": "ARK Wealth Management-NOAH",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-ark-wealth-management-noah-4405958489?position=7&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=vwxDA8ubaPccw2bcpI4a7g%3D%3D",
+      "published_at": "2026-04-27"
+    },
+    {
+      "title": "Software Product Manager",
+      "company": "OPPO",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/software-product-manager-at-oppo-4393404463?position=8&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=NMIvovme7W3Xl6Qk3pDevQ%3D%3D",
+      "published_at": "2026-04-02"
+    },
+    {
+      "title": "Digital Product Manager",
+      "company": "国泰航空",
+      "location": "深圳",
+      "summary": "Real page summary: drive digital product strategy and customer experience for Chinese Mainland users across Cathay's travel and lifestyle platforms, with emphasis on WeChat, customer journeys, digital ecosystem fit, experimentation, KPI ownership, and cross-functional delivery; no explicit AI, agent, or model-platform scope is visible on the JD.",
+      "link": "https://cn.linkedin.com/jobs/view/digital-product-manager-at-cathay-pacific-4404999179?position=9&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=Q%2BK4KJaoNMeeIz90RxnfmA%3D%3D",
+      "published_at": "2026-06-08"
+    },
+    {
+      "title": "Product Manager",
+      "company": "西门子",
+      "location": "北京市, 中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-siemens-4398133457?position=10&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=0QXTywgF0VwW97UB9AQ13w%3D%3D",
+      "published_at": "2026-04-10"
+    },
+    {
+      "title": "Agent AI Product Manager",
+      "company": "WuXi Biologics/药明生物",
+      "location": "上海市",
+      "summary": "Real page summary: lead agentic AI products from discovery to prototype, build, launch, adoption, and iteration inside Digital Labs; define high-value agent workflows, product architecture, tool use, APIs, data integrations, HITL checkpoints, observability, guardrails, and evaluation quality for AI-native enterprise products, platforms, workflows, and tools.",
+      "link": "https://cn.linkedin.com/jobs/view/agent-ai-product-manager-at-wuxi-biologics-4414965608?position=11&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=4C5YuzNUuQZpERiTi7aV%2Bw%3D%3D",
+      "published_at": "2026-05-14"
+    },
+    {
+      "title": "Staff Product Manager – CIX (China Intelligence Export Hub)",
+      "company": "通用汽车",
+      "location": "上海市",
+      "summary": "Real page summary: own export intelligence product strategy for China-origin vehicles across Intelligent Driving, Intelligent Cockpit/HMI, Connectivity and OnStar, defining product requirements, roadmap, experience content, and global platform integration for GM export markets.",
+      "link": "https://cn.linkedin.com/jobs/view/staff-product-manager-%E2%80%93-cix-china-intelligence-export-hub-at-general-motors-4414931914?position=12&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=pxyOvT4wX%2FYAoLumUF0T0A%3D%3D",
+      "published_at": "2026-06-05"
+    },
+    {
+      "title": "Product Manager",
+      "company": "德马泰克",
+      "location": "上海市",
+      "summary": "Real page summary: product manager role in material handling and supply chain solutions, owning commercial viability, product strategy, roadmap, lifecycle management, launches, and cross-functional development across hardware, controls, and software integration; no explicit AI, agent, or model-platform scope is visible on the JD.",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-dematic-4411512152?position=13&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=BdSxhEKjAo5PNxoOSVTzCA%3D%3D",
+      "published_at": "2026-06-05"
+    },
+    {
+      "title": "Product Manager, AI Solutions",
+      "company": "Wing Assistant",
+      "location": "上海市",
+      "summary": "Real page summary: build 0-to-1 AI products for M32 AI, an agentic AI startup for SMBs, working directly with the CPO on product roadmaps, rapid prototyping, user stories, market validation, product marketing, user feedback loops, and scalable product/operations systems.",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-ai-solutions-at-wing-assistant-4406781402?position=14&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=1VScrjnzF4aCouh9Iw06JQ%3D%3D",
+      "published_at": "2026-05-04"
+    },
+    {
+      "title": "Product Manager",
+      "company": "莫仕公司",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-molex-4423602771?position=15&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=t%2FKENMODa1jcVVhQfU1hDw%3D%3D",
+      "published_at": "2026-06-11"
+    },
+    {
+      "title": "Product Manager -Marketplace",
+      "company": "Booking.com",
+      "location": "上海市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-marketplace-at-booking-com-4423395916?position=16&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=ogwMvnXzLIOAkfo7lR349w%3D%3D",
+      "published_at": "2026-06-04"
+    },
+    {
+      "title": "产品经理",
+      "company": "宝时得科技",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-positec-4422598293?position=17&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=C0BzMen4RxpI2bjPTDNHRA%3D%3D",
+      "published_at": "2026-06-01"
+    },
+    {
+      "title": "Senior Product Manager",
+      "company": "Tata Communications",
+      "location": "上海市, 中国",
+      "summary": "Real page summary: own managed enterprise Wi-Fi and LAN product strategy, positioning, roadmap, go-to-market, and service transformation across networking domains; the JD emphasizes managed Wi-Fi, LAN, customer journey, and business process transformation rather than explicit AI, agent, or model-platform scope.",
+      "link": "https://cn.linkedin.com/jobs/view/senior-product-manager-at-tata-communications-4419827795?position=18&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=D%2BkPS0iBDoXnyPHJ1M4bGA%3D%3D",
+      "published_at": "2026-05-27"
+    },
+    {
+      "title": "PRODUCT MANAGER III",
+      "company": "TE 中国",
+      "location": "东莞",
+      "summary": "Real page summary: standard TE Connectivity product management role covering new product development, manufacturing, marketing, overall product strategy, business leadership, and capacity planning to meet sales and profit targets; no explicit AI, agent, or model-platform scope is visible on the JD.",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-iii-at-te-connectivity-4426770474?position=19&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=gaJoI5Z9qVoqL%2FkF4x0wig%3D%3D",
+      "published_at": "2026-06-10"
+    },
+    {
+      "title": "产品（企业管理）",
+      "company": "大连博克斯科技有限公司",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/%E4%BA%A7%E5%93%81%EF%BC%88%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86%EF%BC%89-at-%E5%A4%A7%E8%BF%9E%E5%8D%9A%E5%85%8B%E6%96%AF%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421438243?position=20&pageNum=0&refId=HihfLqfXMCTlpLVO8xtW7Q%3D%3D&trackingId=9TOcJR5c3qQnZAvkgKc0gA%3D%3D",
+      "published_at": "2026-05-29"
+    }
+  ]
+}

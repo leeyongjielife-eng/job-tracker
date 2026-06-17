@@ -1,0 +1,75 @@
+{
+  "task_id": "linkedin-ai-platform-product-cn",
+  "task_name": "LinkedIn AI Platform Product CN",
+  "query": "AI Platform Product Manager",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Platform%20Product%20Manager&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Product Manager — GenAI & Cloud Platform",
+      "company": "Walmart Marketplace",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=1&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=RS4CTZFKK0cwB6kTDkhQhA%3D%3D",
+      "published_at": "2026-03-23"
+    },
+    {
+      "title": "Technical Product Manager, AI Systems",
+      "company": "A1",
+      "location": "",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/technical-product-manager-ai-systems-at-a1-4378773648?position=2&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=uPrdIyyouydvCPOnkUvggg%3D%3D",
+      "published_at": "2026-05-25"
+    },
+    {
+      "title": "AI Product Manager - AI Router",
+      "company": "Confidential",
+      "location": "上海市, 中国",
+      "summary": "Real page summary: own an AI router and Multi-LLM platform focused on model aggregation, intelligent routing, token metering, commercialization controls, and infra-style platform delivery across high-concurrency AI traffic.",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422194924?position=3&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=oyYGTGPQDQnW%2FKvOEehGow%3D%3D",
+      "published_at": "2026-06-02"
+    },
+    {
+      "title": "AI Product Manager - AI Router",
+      "company": "Confidential",
+      "location": "北京市, 中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422302604?position=4&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=hJCqZT6eciFx7tNc3Bi6SA%3D%3D",
+      "published_at": "2026-06-02"
+    },
+    {
+      "title": "AI大模型平台产品负责人-火山方舟MaaS",
+      "company": "字节跳动",
+      "location": "杭州",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81%E8%B4%9F%E8%B4%A3%E4%BA%BA-%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9Fmaas-at-bytedance-4330250347?position=5&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=D5MClFmlL2YAbW%2BR7SLsMA%3D%3D",
+      "published_at": "2026-01-04"
+    },
+    {
+      "title": "Senior Product Manager, AI Gateway - Shanghai",
+      "company": "Kong",
+      "location": "上海市",
+      "summary": "Real page summary: own the AI Gateway data plane and related platform infrastructure, covering LLM and agent traffic routing, control-plane integration, roadmap delivery, and cross-functional work across AI connectivity products.",
+      "link": "https://cn.linkedin.com/jobs/view/senior-product-manager-ai-gateway-shanghai-at-kong-4407194085?position=6&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=2DKCxUXKcq%2FVu1xY7a3XZg%3D%3D",
+      "published_at": "2026-06-08"
+    },
+    {
+      "title": "Senior Product Manager – AI Short Drama Tools",
+      "company": "Meitu Inc.",
+      "location": "北京市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/senior-product-manager-%E2%80%93-ai-short-drama-tools-at-meitu-inc-4427503217?position=7&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=tJ1WXbG3yRM14V0eNzMZkg%3D%3D",
+      "published_at": "2026-06-11"
+    },
+    {
+      "title": "Senior AI PO, CIB AI CoE",
+      "company": "渣打银行",
+      "location": "广州",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/senior-ai-po-cib-ai-coe-at-standard-chartered-4401874642?position=8&pageNum=0&refId=81Npi82eM4kRJiRDCSuDfA%3D%3D&trackingId=3j7bYEiI0qUHnsaPn81Fgg%3D%3D",
+      "published_at": "2026-04-16"
+    }
+  ]
+}

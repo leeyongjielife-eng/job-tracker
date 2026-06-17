@@ -1,0 +1,91 @@
+{
+  "task_id": "linkedin-ai-product-manager-cn",
+  "task_name": "LinkedIn AI Product Manager CN",
+  "query": "AI Product Manager",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Manager&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Technical Product Manager, AI Systems",
+      "company": "A1",
+      "location": "中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/technical-product-manager-ai-systems-at-a1-4378773648?position=1&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=nIhNY4bhjJTfCG8JGQhuQQ%3D%3D",
+      "published_at": "2026-05-25"
+    },
+    {
+      "title": "AI Product Manager",
+      "company": "RayNeo",
+      "location": "深圳",
+      "summary": "Real page summary: build AI productivity tools that turn voice and video into intelligent insights such as automated meeting minutes, smart summaries, and task tracking; own the end-to-end AI feature lifecycle from ASR to LLM summarization, working with GPT/Claude-style models and user-facing workflow design.",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-at-rayneo-4403699156?position=2&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=tZBSFf04nFPJERTSQhPIlQ%3D%3D",
+      "published_at": "2026-04-21"
+    },
+    {
+      "title": "AI Product Manager - AI Router",
+      "company": "Confidential",
+      "location": "上海市, 中国",
+      "summary": "Real page summary: own an AI router and Multi-LLM platform focused on model aggregation, intelligent routing, token metering, commercialization controls, and infra-style platform delivery across high-concurrency AI traffic.",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422194924?position=3&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=iIMtB6zvgP0%2F9iebQq4BIw%3D%3D",
+      "published_at": "2026-06-02"
+    },
+    {
+      "title": "Product Manager",
+      "company": "MiniMax",
+      "location": "上海市, 中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-at-minimax-4395951592?position=4&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=7dAKqj4y3mxT6G4AxQ3AEw%3D%3D",
+      "published_at": "2026-04-08"
+    },
+    {
+      "title": "AI Product Manager - AI Router",
+      "company": "Confidential",
+      "location": "北京市, 中国",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-manager-ai-router-at-confidential-4422302604?position=5&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=KshbbkZexpk63tkW%2BgITLQ%3D%3D",
+      "published_at": "2026-06-02"
+    },
+    {
+      "title": "Product Manager — GenAI & Cloud Platform",
+      "company": "Walmart Marketplace",
+      "location": "深圳",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-%E2%80%94-genai-cloud-platform-at-walmart-marketplace-4388687223?position=6&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=x5LYOB2djqYBOjRY7niw7Q%3D%3D",
+      "published_at": "2026-03-23"
+    },
+    {
+      "title": "Product Manager, AI Solutions",
+      "company": "Wing Assistant",
+      "location": "上海市",
+      "summary": "Real page summary: build 0-to-1 AI products for M32 AI, an agentic AI startup for SMBs, working directly with the CPO on product roadmaps, rapid prototyping, user stories, market validation, product marketing, user feedback loops, and scalable product/operations systems.",
+      "link": "https://cn.linkedin.com/jobs/view/product-manager-ai-solutions-at-wing-assistant-4406781402?position=7&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=dN0GKjUY%2BKsqwqu6lp8Yxg%3D%3D",
+      "published_at": "2026-05-04"
+    },
+    {
+      "title": "AI Product Owner",
+      "company": "施耐德电气",
+      "location": "上海市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376490908?position=8&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=BQcRMOhwZKsPCtaVtd0nDQ%3D%3D",
+      "published_at": "2026-02-25"
+    },
+    {
+      "title": "AI Product Owner",
+      "company": "施耐德电气",
+      "location": "北京市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/ai-product-owner-at-schneider-electric-4376487959?position=9&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=%2B4eSrG5DY9EseuImf6ADdA%3D%3D",
+      "published_at": "2026-02-25"
+    },
+    {
+      "title": "Razer Gold Product Owner – AI Digital Wallet",
+      "company": "Razer",
+      "location": "成都市",
+      "summary": "",
+      "link": "https://cn.linkedin.com/jobs/view/razer-gold-product-owner-%E2%80%93-ai-digital-wallet-at-razer-4406159362?position=10&pageNum=0&refId=rW%2Ft7Z56Bd4ki2%2FD%2FxiQZg%3D%3D&trackingId=sFIMr1r1yCkcST32ceb%2F2w%3D%3D",
+      "published_at": "2026-04-29"
+    }
+  ]
+}

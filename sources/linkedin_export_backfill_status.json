@@ -1,0 +1,92 @@
+{
+  "generated_from": "sources/linkedin_jobs_browser_export_grouped.json",
+  "tasks": [
+    {
+      "task_id": "linkedin-ai-product-manager-cn",
+      "task_name": "LinkedIn AI Product Manager CN",
+      "query": "AI Product Manager",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Manager&location=China&position=1&pageNum=0",
+      "priority": "high",
+      "current_count": 10,
+      "status": "in_progress"
+    },
+    {
+      "task_id": "linkedin-agent-product-cn",
+      "task_name": "LinkedIn Agent Product CN",
+      "query": "Agent Product Manager",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Product%20Manager&location=China&position=1&pageNum=0",
+      "priority": "high",
+      "current_count": 20,
+      "status": "complete"
+    },
+    {
+      "task_id": "linkedin-ai-operations-cn",
+      "task_name": "LinkedIn AI Ops CN",
+      "query": "AI Operations",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Operations&location=China&position=1&pageNum=0",
+      "priority": "medium",
+      "current_count": 10,
+      "status": "complete"
+    },
+    {
+      "task_id": "linkedin-genai-product-cn",
+      "task_name": "LinkedIn GenAI Product CN",
+      "query": "GenAI Product Manager",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=GenAI%20Product%20Manager&location=China&position=1&pageNum=0",
+      "priority": "high",
+      "current_count": 8,
+      "status": "in_progress"
+    },
+    {
+      "task_id": "linkedin-ai-platform-product-cn",
+      "task_name": "LinkedIn AI Platform Product CN",
+      "query": "AI Platform Product Manager",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Platform%20Product%20Manager&location=China&position=1&pageNum=0",
+      "priority": "high",
+      "current_count": 8,
+      "status": "in_progress"
+    },
+    {
+      "task_id": "linkedin-ai-product-ops-cn",
+      "task_name": "LinkedIn AI Product Ops CN",
+      "query": "AI Product Operations",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=AI%20Product%20Operations&location=China&position=1&pageNum=0",
+      "priority": "medium",
+      "current_count": 6,
+      "status": "in_progress"
+    },
+    {
+      "task_id": "linkedin-agent-engineer-cn",
+      "task_name": "LinkedIn Agent Engineer CN",
+      "query": "Agent Engineer",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Agent%20Engineer&location=China&position=1&pageNum=0",
+      "priority": "medium",
+      "current_count": 0,
+      "status": "not_started"
+    },
+    {
+      "task_id": "linkedin-applied-ai-engineer-cn",
+      "task_name": "LinkedIn Applied AI Engineer CN",
+      "query": "Applied AI Engineer",
+      "url": "https://www.linkedin.com/jobs/search/?keywords=Applied%20AI%20Engineer&location=China&position=1&pageNum=0",
+      "priority": "medium",
+      "current_count": 6,
+      "status": "in_progress"
+    }
+  ],
+  "next_recommended_order": [
+    "linkedin-genai-product-cn",
+    "linkedin-ai-platform-product-cn",
+    "linkedin-ai-product-manager-cn",
+    "linkedin-ai-product-ops-cn",
+    "linkedin-agent-product-cn",
+    "linkedin-agent-engineer-cn",
+    "linkedin-applied-ai-engineer-cn",
+    "linkedin-ai-operations-cn"
+  ],
+  "notes": [
+    "当前 3 个已跑过的 LinkedIn task 为：AI Product Manager、Agent Product Manager、AI Operations。",
+    "下一轮优先补 GenAI Product Manager 和 AI Platform Product Manager，它们更可能带来高质量 AI PM shortlist。",
+    "工程向搜索项保留为补充池，不应让其数量压过 PM 核心池。"
+  ]
+}

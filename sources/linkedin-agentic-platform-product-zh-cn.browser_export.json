@@ -1,0 +1,10 @@
+{
+  "task_id": "linkedin-agentic-platform-product-zh-cn",
+  "task_name": "LinkedIn Agentic Platform Product ZH CN",
+  "query": "智能体平台产品",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=%E6%99%BA%E8%83%BD%E4%BD%93%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81&location=China&position=1&pageNum=0",
+  "jobs": []
+}

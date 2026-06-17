@@ -1,0 +1,19 @@
+{
+  "task_id": "linkedin-genai-product-zh-cn",
+  "task_name": "LinkedIn Gen-AI Product ZH CN",
+  "query": "Gen-AI产品经理",
+  "region": "China",
+  "source": "LinkedIn Browser Search",
+  "source_type": "linkedin_manual",
+  "url": "https://www.linkedin.com/jobs/search/?keywords=Gen-AI%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86&location=China&position=1&pageNum=0",
+  "jobs": [
+    {
+      "title": "Gen-AI产品经理",
+      "company": "上海瑞霖贸易有限公司",
+      "location": "广州",
+      "summary": "Real page summary: own Gen-AI product planning and roadmap design across LLM, Agent, multimodal, RAG, enterprise knowledge base and knowledge graph use cases; expected to use Prompt Engineering, System Prompt design, Dify, Coze, low-code AI workflows, and AI platform product delivery with hands-on prototyping.",
+      "link": "https://cn.linkedin.com/jobs/view/gen-ai%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-at-%E4%B8%8A%E6%B5%B7%E7%91%9E%E9%9C%96%E8%B4%B8%E6%98%93%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4416878219?position=5&pageNum=0&refId=Pu3%2B78ZzAxH%2FUXVBZXhldg%3D%3D&trackingId=Obf9EAiCcH4qxNAzgn3ijA%3D%3D",
+      "published_at": "2026-06-01"
+    }
+  ]
+}

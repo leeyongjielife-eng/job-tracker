@@ -616,12 +616,22 @@ def canonicalize_url(raw_url: str) -> str:
     except Exception:
         return raw_url.strip()
 
+    host = (parsed.netloc or "").lower()
+    path = parsed.path or ""
+
+    if "linkedin.com" in host and "/jobs/view/" in path:
+        job_id_match = re.search(r"(\d+)(?:/)?$", path)
+        if not job_id_match:
+            job_id_match = re.search(r"-(\d+)(?:/)?$", path)
+        if job_id_match:
+            return f"https://www.linkedin.com/jobs/view/{job_id_match.group(1)}/"
+
     query_items = []
     for item in parsed.query.split("&"):
         if not item:
             continue
         key = item.split("=", 1)[0].lower()
-        if key.startswith("utm_") or key in {"trk", "trackingid", "ref", "refid"}:
+        if key.startswith("utm_") or key in {"trk", "trackingid", "ref", "refid", "ebp"}:
             continue
         query_items.append(item)
 

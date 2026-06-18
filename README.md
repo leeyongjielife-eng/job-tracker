@@ -1,25 +1,26 @@
 # Job Tracker
 
-这个仓库用于每周抓取和整理 AI PM / AI 邻近岗位，并同步到 Notion。
+这个项目已经从工作区根目录整理到独立目录：
 
-当前结构：
-
+- 项目目录：`projects/job-tracker/`
 - 主脚本：`job_tracker.py`
 - LinkedIn 中间层：`linkedin_ingest.py`
-- GLM 小样本测试：`glm_quality_test.py`
 - 来源配置：`sources/`
 - 运行产物：`data/`
-- n8n 参考工作流：`n8n/`
+- n8n 工作流：`n8n/`
 - 项目日志：`logs/`
 
 ## 初始化
 
 ```bash
+cd /Users/youngkit/Documents/codex_project/projects/job-tracker
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 ```
+
+脚本仍兼容读取工作区根目录旧 `.env`，这样现有本地配置不会立刻失效。
 
 ## 常用命令
 
@@ -101,6 +102,30 @@ python3 linkedin_ingest.py --mode manual_json
 ```bash
 python3 linkedin_ingest.py --mode refresh_bundle
 ```
+
+如果你想在本机直接自动打开浏览器刷新 LinkedIn 搜索结果，再接入现有中间层：
+
+```bash
+python3 linkedin_browser_refresh.py --refresh-bundle
+```
+
+如果你本机终端带了代理变量，建议在 `.env` 保留：
+
+```bash
+DISABLE_SYSTEM_PROXY=1
+```
+
+这样脚本连接本机 Chrome 调试端口 `127.0.0.1:9222` 时，不会误走系统代理。
+
+当前本机刷新脚本还带有基础容错：
+
+- LinkedIn 页面导航失败会自动重试
+- 单个搜索项反复失败时会跳过并继续后续任务
+- 最终失败项会出现在脚本输出里的 `failed_tasks`
+
+详细说明见：
+
+- `docs/linkedin-local-browser-automation.md`
 
 用半手动纯文本输入生成 LinkedIn 标准化中间层：
 

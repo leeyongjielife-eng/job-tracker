@@ -22,6 +22,33 @@ cp .env.example .env
 
 脚本仍兼容读取工作区根目录旧 `.env`，这样现有本地配置不会立刻失效。
 
+## 每周最短操作流程
+
+如果你这周只想完成一次最小必要更新，按这个顺序做：
+
+1. 打开你已经登录 LinkedIn 的专用 Chrome 会话。
+2. 进入项目目录并运行：
+
+```bash
+cd /Users/youngkit/Documents/codex_project/projects/job-tracker
+source .venv/bin/activate
+python linkedin_browser_refresh.py --refresh-bundle
+```
+
+3. 确认这轮刷新已经生成：
+   - `data/linkedin_jobs.json`
+   - `data/linkedin_refresh_report.json`
+4. 等 GitHub Actions 周跑，或者手动运行：
+
+```bash
+python job_tracker.py
+```
+
+补充说明：
+
+- 如果 LinkedIn 个别搜索词临时失败，脚本会自动重试，并在必要时跳过失败项继续整轮刷新。
+- 如果这周网络特别差，先完成 `linkedin_browser_refresh.py --refresh-bundle` 即可，等网络稳定后再补跑也可以。
+
 ## 常用命令
 
 按默认滚动窗口抓取并同步岗位：

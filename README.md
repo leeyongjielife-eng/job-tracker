@@ -49,6 +49,22 @@ python job_tracker.py
 - 如果 LinkedIn 个别搜索词临时失败，脚本会自动重试，并在必要时跳过失败项继续整轮刷新。
 - 如果这周网络特别差，先完成 `linkedin_browser_refresh.py --refresh-bundle` 即可，等网络稳定后再补跑也可以。
 
+## 桌面按钮
+
+如果你不想每次手动打开终端，项目里已经准备了两个可双击运行的启动脚本：
+
+- `scripts/run_linkedin_refresh.command`
+- `scripts/run_full_weekly_update.command`
+
+它们分别对应：
+
+- 只刷新 LinkedIn 搜索数据
+- 刷新 LinkedIn 数据后，再继续执行 `job_tracker.py`
+
+每次运行的日志会保存到：
+
+- `logs/launcher/`
+
 ## 常用命令
 
 按默认滚动窗口抓取并同步岗位：

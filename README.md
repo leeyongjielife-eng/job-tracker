@@ -27,7 +27,14 @@ cp .env.example .env
 如果你这周只想完成一次最小必要更新，按这个顺序做：
 
 1. 打开你已经登录 LinkedIn 的专用 Chrome 会话。
-2. 进入项目目录并运行：
+2. 点击桌面按钮 `Job Tracker - Refresh LinkedIn.command`
+3. 确认这轮刷新已经生成：
+   - `data/linkedin_jobs.json`
+   - `data/linkedin_refresh_report.json`
+4. 把这次更新后的文件 push 到 GitHub。
+5. 等 GitHub Actions 周跑，或者手动触发 GitHub Actions。
+
+如果你不用桌面按钮，也可以手动运行：
 
 ```bash
 cd /Users/youngkit/Documents/codex_project/projects/job-tracker
@@ -35,17 +42,11 @@ source .venv/bin/activate
 python linkedin_browser_refresh.py --refresh-bundle
 ```
 
-3. 确认这轮刷新已经生成：
-   - `data/linkedin_jobs.json`
-   - `data/linkedin_refresh_report.json`
-4. 等 GitHub Actions 周跑，或者手动运行：
-
-```bash
-python job_tracker.py
-```
-
 补充说明：
 
+- `Refresh LinkedIn` 的职责只是更新 LinkedIn 原始岗位数据。
+- 真正的后续筛选、打分、写入 Notion，仍然交给 GitHub Actions。
+- 如果你只刷新了本地文件但没有 push，GitHub Actions 仍然看不到这次新数据。
 - 如果 LinkedIn 个别搜索词临时失败，脚本会自动重试，并在必要时跳过失败项继续整轮刷新。
 - 如果这周网络特别差，先完成 `linkedin_browser_refresh.py --refresh-bundle` 即可，等网络稳定后再补跑也可以。
 
@@ -58,8 +59,8 @@ python job_tracker.py
 
 它们分别对应：
 
-- 只刷新 LinkedIn 搜索数据
-- 刷新 LinkedIn 数据后，再继续执行 `job_tracker.py`
+- `run_linkedin_refresh.command`：推荐主流程。只刷新 LinkedIn 搜索数据，后续交给 GitHub Actions。
+- `run_full_weekly_update.command`：本机直接继续执行 `job_tracker.py`。适合临时手动全链路验证，不是默认推荐流程。
 
 每次运行的日志会保存到：
 

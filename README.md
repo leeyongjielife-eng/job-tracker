@@ -45,6 +45,7 @@ python linkedin_browser_refresh.py --refresh-bundle
 补充说明：
 
 - `Refresh LinkedIn` 的职责只是更新 LinkedIn 原始岗位数据。
+- 按钮会先检查专用 Chrome 调试会话是否已打开；如果没有，会先自动拉起专用 Chrome，再继续刷新。
 - 真正的后续筛选、打分、写入 Notion，仍然交给 GitHub Actions。
 - 如果你只刷新了本地文件但没有 push，GitHub Actions 仍然看不到这次新数据。
 - 如果 LinkedIn 个别搜索词临时失败，脚本会自动重试，并在必要时跳过失败项继续整轮刷新。
@@ -61,6 +62,8 @@ python linkedin_browser_refresh.py --refresh-bundle
 
 - `run_linkedin_refresh.command`：推荐主流程。只刷新 LinkedIn 搜索数据，后续交给 GitHub Actions。
 - `run_full_weekly_update.command`：本机直接继续执行 `job_tracker.py`。适合临时手动全链路验证，不是默认推荐流程。
+
+这两个按钮都会先尝试自动打开专用 Chrome profile，再开始执行后续步骤。
 
 每次运行的日志会保存到：
 

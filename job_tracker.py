@@ -321,6 +321,8 @@ NOISE_SUFFIXES = [
     "拉勾招聘",
     "lagou",
     "google alerts",
+    "with verification",
+    "verification",
 ]
 
 LOCATION_HINTS = [
@@ -608,6 +610,35 @@ def strip_html(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def collapse_repeated_text(text: str) -> str:
+    normalized = re.sub(r"\s+", " ", text or "").strip()
+    if not normalized:
+        return ""
+
+    tokens = normalized.split(" ")
+    if len(tokens) >= 2 and len(tokens) % 2 == 0:
+        midpoint = len(tokens) // 2
+        first_half = " ".join(tokens[:midpoint]).strip()
+        second_half = " ".join(tokens[midpoint:]).strip()
+        if first_half and first_half == second_half:
+            return first_half
+
+    for separator in (" - ", " – ", " — ", " | ", " · "):
+        if separator in normalized:
+            left, right = normalized.split(separator, 1)
+            if left.strip() and left.strip() == right.strip():
+                return left.strip()
+
+    if len(normalized) % 2 == 0:
+        midpoint = len(normalized) // 2
+        first_half = normalized[:midpoint].strip()
+        second_half = normalized[midpoint:].strip()
+        if first_half and first_half == second_half:
+            return first_half
+
+    return normalized
+
+
 def canonicalize_url(raw_url: str) -> str:
     if not raw_url:
         return ""
@@ -676,8 +707,11 @@ def get_review_decision(job: JobPosting) -> str:
 def clean_title(raw_title: str) -> str:
     title = strip_html(raw_title)
     title = re.sub(r"\s+", " ", title).strip()
+    title = re.sub(r"\s+with verification$", "", title, flags=re.IGNORECASE)
+    title = collapse_repeated_text(title)
     for suffix in NOISE_SUFFIXES:
         title = re.sub(rf"\s*[\-|–—|]\s*{re.escape(suffix)}$", "", title, flags=re.IGNORECASE)
+        title = re.sub(rf"\s+{re.escape(suffix)}$", "", title, flags=re.IGNORECASE)
     return title.strip(" -|")
 
 

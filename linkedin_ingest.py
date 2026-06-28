@@ -17,6 +17,7 @@ import requests
 from job_tracker import (
     EXPERIMENTAL_LINKEDIN_SOURCES,
     canonicalize_url,
+    clean_title,
     load_env,
     parse_datetime_string,
     parse_entry_datetime,
@@ -34,6 +35,22 @@ DEFAULT_REPORT_PATH = ROOT / "data" / "linkedin_refresh_report.json"
 DEFAULT_SOURCES_DIR = ROOT / "sources"
 DEFAULT_TIMEOUT_SECONDS = 20.0
 DEFAULT_FRESHNESS_DAYS = 7
+
+LINKEDIN_CARD_SUMMARY_NOISE_PATTERNS = (
+    r"已查看",
+    r"贊助",
+    r"赞助",
+    r"搶先應徵",
+    r"抢先应征",
+    r"一鍵應徵",
+    r"一键应征",
+    r"成為前\s*\d+\s*位申請者",
+    r"成为前\s*\d+\s*位申请者",
+    r"在過去\s*\d+\s*小時內",
+    r"在过去\s*\d+\s*小时内",
+    r"\d+\s*小時前",
+    r"\d+\s*小时前",
+)
 
 
 @dataclass(slots=True)
@@ -124,11 +141,26 @@ def coerce_datetime(value: Any) -> datetime | None:
     return None
 
 
+def clean_linkedin_summary(raw_summary: str) -> str:
+    summary = strip_html(raw_summary).strip()
+    if not summary:
+        return ""
+
+    cleaned = summary
+    for pattern in LINKEDIN_CARD_SUMMARY_NOISE_PATTERNS:
+        cleaned = re.sub(pattern, " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" -|")
+
+    if not cleaned:
+        return ""
+    return cleaned
+
+
 def normalize_manual_job(raw: dict[str, Any]) -> LinkedInJob | None:
-    title = strip_html(str(raw.get("title") or raw.get("position") or "")).strip()
+    title = clean_title(str(raw.get("title") or raw.get("position") or ""))
     company = strip_html(str(raw.get("company") or raw.get("company_name") or "")).strip()
     location = strip_html(str(raw.get("location") or raw.get("city") or "")).strip()
-    summary = strip_html(
+    summary = clean_linkedin_summary(
         str(
             raw.get("summary")
             or raw.get("description")

@@ -1,5 +1,36 @@
 # Job Tracker Progress Log
 
+## 2026-06-29
+
+### Current Focus
+
+- [x] 完成项目级最终审计的本地部分
+- [x] 确认 GitHub Actions 当前线上成功运行仍不是最新本地版本
+- [x] 确认当前线上 Notion 里仍可见旧的非 LinkedIn 来源记录
+- [x] 修复 LinkedIn 中间层在 `refresh_bundle` 阶段直接保留原始浏览器卡片噪音的问题
+- [x] 用小样本重新审计 `linkedin_jobs.json` 和 grouped bundle
+- [ ] 推送当前版本到 GitHub
+- [ ] 手动触发一次线上运行并复核 Notion 实写结果
+
+### Notes
+
+- 本轮 release audit 结论曾是 `NO-GO`，原因主要有两类：
+  - GitHub Actions 最近成功运行的提交不是当前本地版本，因此线上还未体现“只收 LinkedIn 来源”的最新逻辑
+  - LinkedIn 中间层虽然主脚本最终会二次清洗，但 grouped / normalized 中间产物当时仍含有 `几天前 / 几周前 / 抢先申请 / 正在招聘` 等浏览器卡片界面噪音
+- 本轮已完成的修复：
+  - `linkedin_ingest.py` 的 `aggregate_browser_exports()` 现在会先对每条浏览器导出岗位执行标准化，再写入 grouped payload
+  - `LINKEDIN_CARD_SUMMARY_NOISE_PATTERNS` 与 `LINKEDIN_LOCATION_NOISE_PATTERNS` 已补齐 `周前 / 月前 / 正在招聘` 等中文界面噪音规则
+- 修复后本地复跑结果：
+  - `python linkedin_ingest.py --mode refresh_bundle` 成功
+  - `data/linkedin_jobs.json` 审计结果：`bad_count = 0`
+  - `sources/linkedin_jobs_browser_export_grouped.json` 审计结果：`grouped_bad_count = 0`
+- 当前仍未完成的最后闭环：
+  - 把这版修复推到 `job-tracker` GitHub 仓库
+  - 手动触发一次线上运行
+  - 复核 Notion 写入是否已经反映：
+    - `Source` 只来自 LinkedIn
+    - 更新旧记录时不重置人工 `Status`
+
 ## 2026-06-10
 
 ### Current Focus
@@ -533,3 +564,67 @@ Working tree highlights:
     - `Confidential / AI产品经理 / 杭州`
     - `Walmart Marketplace / Product Manager — GenAI & Cloud Platform / 深圳`
     - `上海海能证券投资顾问有限公司 / AI大模型产品经理 / 上海市`
+
+## 2026-06-29
+
+### Current Focus
+
+- [x] Audit the current project for workflow / code / config inconsistencies
+- [x] Fix Notion sync so manual `Status` is not overwritten
+- [x] Reconfirm weekly production window should stay at `7` days
+- [x] Reconcile `7d / 60d` between code, README, `.env.example`, and current-work docs
+- [x] Make LinkedIn refresh fail loudly when task-level refresh fails
+- [x] Repair the `legacy_rss` compatibility path
+- [x] Expose undated LinkedIn jobs in the refresh report
+- [x] Add a summary-quality gate for weak-signal LinkedIn jobs
+- [x] Correct README wording for `run_full_weekly_update.command`
+- [x] Run a fresh `7`-day local dry-run audit after the fixes
+
+### Notes
+
+- Audit fix checklist created at:
+  - `docs/audit-fix-checklist.md`
+- Notion sync behavior update:
+  - New pages still default to `Status = New`
+  - Existing pages no longer have their `Status` overwritten during sync
+- Weekly window decision confirmed with the user:
+  - production weekly run = rolling `7` days
+  - `60` days = first-pool build or manual backfill only
+- LinkedIn refresh behavior update:
+  - If any task fails during local browser refresh, the script now exits non-zero
+  - `refresh_bundle` and optional git push are skipped in that case
+  - This prevents stale per-task browser export files from being silently mixed into a “successful” bundle
+- LinkedIn refresh report update:
+  - report now includes `dated_jobs_count`
+  - report now includes `undated_jobs_count`
+  - report now includes `undated_tasks`
+  - report now includes `summary_jobs_count`
+  - report now includes `empty_summary_jobs_count`
+  - report now includes `summary_empty_core_tasks`
+- Summary gate update:
+  - `linkedin_json` jobs with empty summary are no longer automatically allowed through
+  - they now need a strong AI title signal to survive the main keep gate
+- Local verification after fixes:
+  - `python job_tracker.py --dry-run --skip-analysis --output data/job-tracker-7d-audit.json`
+  - result: `processed_jobs = 3`
+- Current `7`-day sample audit result:
+  - `Amazon / Product Manager - AI , NBS / 上海`
+  - `Binance / Pioneer Talent Program - AI Agent Engineer / 香港远程`
+  - `沃尔玛(中国)投资有限公司 / AI智能体与低代码平台 产品负责人 / 深圳`
+- New data-quality issues surfaced by the `7`-day audit sample:
+  - some LinkedIn `location` values still include UI noise like `抢先申请` / `X 天前`
+  - at least one LinkedIn record currently keeps a search-results URL instead of a canonical job-view URL
+    - sample: `Binance / Pioneer Talent Program - AI Agent Engineer`
+  - these two issues are not in the original audit batch and should be treated as the next cleanup targets
+- Follow-up cleanup completed:
+  - LinkedIn search-result URLs with `currentJobId` are now canonicalized into `https://www.linkedin.com/jobs/view/<job_id>/`
+  - LinkedIn search-result URLs without resolvable job ids are now dropped instead of being preserved as search pages
+  - LinkedIn `location` noise like `抢先申请 / X 天前` is now cleaned both in middle-layer normalization and in the main `linkedin_json` ingestion path
+  - LinkedIn summary noise like `4 天前` is now cleaned in the main `linkedin_json` ingestion path
+  - Source-layer behavior is now tightened to LinkedIn-only by default:
+    - if `data/linkedin_jobs.json` is missing, the project no longer auto-falls back to Greenhouse / Lever / company-site sources
+    - supplemental ATS/company sources are now opt-in only
+- Post-cleanup `7`-day audit sample now looks cleaner:
+  - `Binance / Pioneer Talent Program - AI Agent Engineer / 香港远程`
+  - `沃尔玛(中国)投资有限公司 / AI智能体与低代码平台 产品负责人 / 深圳`
+  - `Amazon / Product Manager - AI , NBS / 上海`

@@ -40,6 +40,7 @@ LINKEDIN_CARD_SUMMARY_NOISE_PATTERNS = (
     r"已查看",
     r"贊助",
     r"赞助",
+    r"正在招聘",
     r"搶先應徵",
     r"抢先应征",
     r"一鍵應徵",
@@ -50,6 +51,29 @@ LINKEDIN_CARD_SUMMARY_NOISE_PATTERNS = (
     r"在过去\s*\d+\s*小时内",
     r"\d+\s*小時前",
     r"\d+\s*小时前",
+    r"\d+\s*天前",
+    r"\d+\s*日前",
+    r"\d+\s*週前",
+    r"\d+\s*周前",
+    r"\d+\s*個月前",
+    r"\d+\s*个月前",
+)
+
+LINKEDIN_LOCATION_NOISE_PATTERNS = (
+    r"搶先應徵",
+    r"抢先应征",
+    r"搶先申請",
+    r"抢先申请",
+    r"已查看",
+    r"正在招聘",
+    r"\d+\s*小時前",
+    r"\d+\s*小时前",
+    r"\d+\s*天前",
+    r"\d+\s*日前",
+    r"\d+\s*週前",
+    r"\d+\s*周前",
+    r"\d+\s*個月前",
+    r"\d+\s*个月前",
 )
 
 
@@ -156,10 +180,22 @@ def clean_linkedin_summary(raw_summary: str) -> str:
     return cleaned
 
 
+def clean_linkedin_location(raw_location: str) -> str:
+    location = strip_html(raw_location).strip()
+    if not location:
+        return ""
+
+    cleaned = location
+    for pattern in LINKEDIN_LOCATION_NOISE_PATTERNS:
+        cleaned = re.sub(pattern, " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" -|,")
+    return cleaned
+
+
 def normalize_manual_job(raw: dict[str, Any]) -> LinkedInJob | None:
     title = clean_title(str(raw.get("title") or raw.get("position") or ""))
     company = strip_html(str(raw.get("company") or raw.get("company_name") or "")).strip()
-    location = strip_html(str(raw.get("location") or raw.get("city") or "")).strip()
+    location = clean_linkedin_location(str(raw.get("location") or raw.get("city") or ""))
     summary = clean_linkedin_summary(
         str(
             raw.get("summary")
@@ -375,6 +411,10 @@ def load_legacy_rss() -> list[LinkedInJob]:
                     published_at=published_at,
                     source=source["name"],
                     source_type="linkedin_rss_legacy",
+                    source_task_id="",
+                    source_task_name="",
+                    source_query="",
+                    source_region="",
                 )
             )
 
@@ -391,6 +431,10 @@ def aggregate_browser_exports(tasks_path: Path, sources_dir: Path) -> dict[str, 
 
     exports: list[dict[str, Any]] = []
     report_tasks: list[dict[str, Any]] = []
+    total_undated_jobs = 0
+    total_dated_jobs = 0
+    total_summary_jobs = 0
+    total_empty_summary_jobs = 0
 
     for task in tasks:
         task_id = str(task.get("id") or task.get("task_id") or "").strip()
@@ -399,6 +443,10 @@ def aggregate_browser_exports(tasks_path: Path, sources_dir: Path) -> dict[str, 
 
         export_path = sources_dir / f"{task_id}.browser_export.json"
         raw_jobs_count = 0
+        undated_jobs_count = 0
+        dated_jobs_count = 0
+        summary_jobs_count = 0
+        empty_summary_jobs_count = 0
         freshest_date: str | None = None
         oldest_date: str | None = None
         status = "missing"
@@ -417,21 +465,60 @@ def aggregate_browser_exports(tasks_path: Path, sources_dir: Path) -> dict[str, 
             for raw_job in jobs:
                 if not isinstance(raw_job, dict):
                     continue
-                normalized_jobs.append(dict(raw_job))
-                published_at = coerce_datetime(
-                    raw_job.get("published_at")
-                    or raw_job.get("published")
-                    or raw_job.get("posted_at")
-                    or raw_job.get("date")
+                merged_job = dict(raw_job)
+                merged_job.setdefault(
+                    "source",
+                    str(export_payload.get("source") or "LinkedIn Browser Search").strip()
+                    or "LinkedIn Browser Search",
                 )
+                merged_job.setdefault(
+                    "source_type",
+                    str(export_payload.get("source_type") or "linkedin_manual").strip()
+                    or "linkedin_manual",
+                )
+                merged_job.setdefault("task_id", task_id)
+                merged_job.setdefault(
+                    "task_name",
+                    str(
+                        export_payload.get("task_name")
+                        or task.get("name")
+                        or task.get("task_name")
+                        or task_id
+                    ).strip(),
+                )
+                merged_job.setdefault("query", str(export_payload.get("query") or task.get("query") or "").strip())
+                merged_job.setdefault(
+                    "region",
+                    str(export_payload.get("region") or task.get("region") or "").strip(),
+                )
+
+                normalized = normalize_manual_job(merged_job)
+                if normalized is None:
+                    continue
+
+                normalized_item = jobs_to_json([normalized])[0]
+                normalized_jobs.append(normalized_item)
+
+                if normalized.summary:
+                    summary_jobs_count += 1
+                else:
+                    empty_summary_jobs_count += 1
+                published_at = normalized.published_at
                 if published_at:
                     published_dates.append(published_at)
+                    dated_jobs_count += 1
+                else:
+                    undated_jobs_count += 1
 
             raw_jobs_count = len(normalized_jobs)
             if raw_jobs_count > 0:
                 status = "ready"
             else:
                 status = "empty"
+            total_undated_jobs += undated_jobs_count
+            total_dated_jobs += dated_jobs_count
+            total_summary_jobs += summary_jobs_count
+            total_empty_summary_jobs += empty_summary_jobs_count
 
             if published_dates:
                 freshest_date = max(published_dates).date().isoformat()
@@ -466,6 +553,10 @@ def aggregate_browser_exports(tasks_path: Path, sources_dir: Path) -> dict[str, 
                 "status": status,
                 "export_file": str(export_path),
                 "jobs_count": raw_jobs_count,
+                "dated_jobs_count": dated_jobs_count,
+                "undated_jobs_count": undated_jobs_count,
+                "summary_jobs_count": summary_jobs_count,
+                "empty_summary_jobs_count": empty_summary_jobs_count,
                 "freshest_published_at": freshest_date,
                 "oldest_published_at": oldest_date,
             }
@@ -473,6 +564,10 @@ def aggregate_browser_exports(tasks_path: Path, sources_dir: Path) -> dict[str, 
 
     missing_tasks = [item["task_id"] for item in report_tasks if item["status"] == "missing"]
     empty_tasks = [item["task_id"] for item in report_tasks if item["status"] == "empty"]
+    undated_tasks = [item["task_id"] for item in report_tasks if item.get("undated_jobs_count", 0) > 0]
+    empty_summary_tasks = [
+        item["task_id"] for item in report_tasks if item.get("empty_summary_jobs_count", 0) > 0
+    ]
 
     return {
         "generated_at": datetime.now(UTC).isoformat(),
@@ -485,6 +580,12 @@ def aggregate_browser_exports(tasks_path: Path, sources_dir: Path) -> dict[str, 
             "exported_task_count": len(exports),
             "missing_tasks": missing_tasks,
             "empty_tasks": empty_tasks,
+            "dated_jobs_count": total_dated_jobs,
+            "undated_jobs_count": total_undated_jobs,
+            "undated_tasks": undated_tasks,
+            "summary_jobs_count": total_summary_jobs,
+            "empty_summary_jobs_count": total_empty_summary_jobs,
+            "empty_summary_tasks": empty_summary_tasks,
         },
         "task_by_id": task_by_id,
     }
@@ -494,10 +595,20 @@ def build_refresh_report(grouped_payload: dict[str, Any], freshness_days: int) -
     freshness_cutoff = (datetime.now(UTC) - timedelta(days=freshness_days)).date()
     stale_tasks: list[str] = []
     fresh_tasks: list[str] = []
+    undated_only_tasks: list[str] = []
+    summary_empty_core_tasks: list[str] = []
 
     for item in grouped_payload.get("task_report", []):
+        if (
+            item.get("expected_role_bucket") == "pm_core"
+            and item.get("jobs_count", 0) > 0
+            and item.get("summary_jobs_count", 0) == 0
+        ):
+            summary_empty_core_tasks.append(item["task_id"])
         freshest_raw = item.get("freshest_published_at")
         if not freshest_raw:
+            if item.get("jobs_count", 0) > 0 and item.get("undated_jobs_count", 0) > 0:
+                undated_only_tasks.append(item["task_id"])
             continue
         freshest_date = datetime.fromisoformat(freshest_raw).date()
         if freshest_date < freshness_cutoff:
@@ -520,6 +631,10 @@ def build_refresh_report(grouped_payload: dict[str, Any], freshness_days: int) -
             "stale_task_count": len(stale_tasks),
             "fresh_tasks": fresh_tasks,
             "stale_tasks": stale_tasks,
+            "undated_only_task_count": len(undated_only_tasks),
+            "undated_only_tasks": undated_only_tasks,
+            "summary_empty_core_task_count": len(summary_empty_core_tasks),
+            "summary_empty_core_tasks": summary_empty_core_tasks,
         },
         "tasks": grouped_payload.get("task_report", []),
     }

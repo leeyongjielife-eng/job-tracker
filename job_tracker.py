@@ -12,7 +12,7 @@ from dataclasses import asdict, dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import parse_qsl, urlparse, urlunparse
 
 import feedparser
 import requests
@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
 WORKSPACE_ROOT = ROOT.parent.parent
-DEFAULT_LOOKBACK_DAYS = 60
+DEFAULT_LOOKBACK_DAYS = 7
 DEFAULT_TIMEOUT_SECONDS = 20.0
 DEFAULT_GLM_MODEL = "glm-4.5-flash"
 DEFAULT_WEEKLY_CRON_UTC = "0 0 * * 1"
@@ -338,6 +338,35 @@ LOCATION_HINTS = [
     "onsite",
 ]
 
+LINKEDIN_LOCATION_NOISE_PATTERNS = [
+    r"搶先應徵",
+    r"抢先应征",
+    r"搶先申請",
+    r"抢先申请",
+    r"已查看",
+    r"\d+\s*小時前",
+    r"\d+\s*小时前",
+    r"\d+\s*天前",
+    r"\d+\s*日前",
+]
+
+LINKEDIN_SUMMARY_NOISE_PATTERNS = [
+    r"已查看",
+    r"贊助",
+    r"赞助",
+    r"搶先應徵",
+    r"抢先应征",
+    r"一鍵應徵",
+    r"一键应征",
+    r"成為前\s*\d+\s*位申請者",
+    r"成为前\s*\d+\s*位申请者",
+    r"在過去\s*\d+\s*小時內",
+    r"在过去\s*\d+\s*小时内",
+    r"\d+\s*小時前",
+    r"\d+\s*小时前",
+    r"\d+\s*天前",
+]
+
 LOCATION_PRIORITY = {
     "guangdong": 1,
     "shenzhen": 1,
@@ -477,7 +506,7 @@ def parse_args() -> argparse.Namespace:
         "--lookback-days",
         type=int,
         default=default_lookback_days(),
-        help="Include jobs published within this rolling lookback window. Default is 60 days.",
+        help="Include jobs published within this rolling lookback window. Default is 7 days.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Fetch and analyze jobs without writing to Notion.")
     parser.add_argument("--skip-analysis", action="store_true", help="Do not call the LLM analysis step. Useful for local validation.")
@@ -529,16 +558,13 @@ def load_sources() -> list[dict[str, Any]]:
     sources: list[dict[str, Any]] = []
     builtin_sources_allowed = os.getenv("JOB_TRACKER_DISABLE_BUILTIN_SOURCES", "0").strip() != "1"
     include_supplemental_sources = os.getenv("JOB_TRACKER_INCLUDE_SUPPLEMENTAL_SOURCES", "0").strip() == "1"
-    linkedin_path: Path | None = None
-    linkedin_exists = False
     if os.getenv("JOB_TRACKER_INCLUDE_LINKEDIN_MIDDLE_LAYER", "1").strip() == "1":
         linkedin_path = Path(
             os.getenv("JOB_TRACKER_LINKEDIN_JSON_PATH", str(DEFAULT_LINKEDIN_MIDDLE_LAYER_PATH)).strip()
         )
         if not linkedin_path.is_absolute():
             linkedin_path = ROOT / linkedin_path
-        linkedin_exists = linkedin_path.exists()
-        if linkedin_exists:
+        if linkedin_path.exists():
             sources.append(
                 {
                     "name": "LinkedIn Middle Layer",
@@ -549,9 +575,10 @@ def load_sources() -> list[dict[str, Any]]:
                 }
             )
 
-    # LinkedIn is now the default primary layer. Supplemental ATS/company sources
-    # are only added when explicitly enabled, or when LinkedIn input is absent.
-    if builtin_sources_allowed and (include_supplemental_sources or not linkedin_exists):
+    # Default project behavior is now LinkedIn-only. Supplemental ATS/company
+    # sources are never auto-enabled as a fallback; they are added only when
+    # explicitly requested.
+    if builtin_sources_allowed and include_supplemental_sources:
         if DEFAULT_SOURCE_CATALOG_PATH.exists():
             sources.extend(json.loads(DEFAULT_SOURCE_CATALOG_PATH.read_text(encoding="utf-8")))
         else:
@@ -649,6 +676,8 @@ def canonicalize_url(raw_url: str) -> str:
 
     host = (parsed.netloc or "").lower()
     path = parsed.path or ""
+    query_pairs = parse_qsl(parsed.query, keep_blank_values=True)
+    query_map = {key: value for key, value in query_pairs}
 
     if "linkedin.com" in host and "/jobs/view/" in path:
         job_id_match = re.search(r"(\d+)(?:/)?$", path)
@@ -657,14 +686,23 @@ def canonicalize_url(raw_url: str) -> str:
         if job_id_match:
             return f"https://www.linkedin.com/jobs/view/{job_id_match.group(1)}/"
 
+    if "linkedin.com" in host and "/jobs/search" in path:
+        current_job_id = (query_map.get("currentJobId") or "").strip()
+        if current_job_id.isdigit():
+            return f"https://www.linkedin.com/jobs/view/{current_job_id}/"
+        return ""
+
     query_items = []
-    for item in parsed.query.split("&"):
-        if not item:
+    for key, value in query_pairs:
+        if not key:
             continue
-        key = item.split("=", 1)[0].lower()
-        if key.startswith("utm_") or key in {"trk", "trackingid", "ref", "refid", "ebp"}:
+        normalized_key = key.lower()
+        if normalized_key.startswith("utm_") or normalized_key in {"trk", "trackingid", "ref", "refid", "ebp"}:
             continue
-        query_items.append(item)
+        if value:
+            query_items.append(f"{key}={value}")
+        else:
+            query_items.append(key)
 
     cleaned = parsed._replace(query="&".join(query_items), fragment="")
     return urlunparse(cleaned).strip()
@@ -713,6 +751,30 @@ def clean_title(raw_title: str) -> str:
         title = re.sub(rf"\s*[\-|–—|]\s*{re.escape(suffix)}$", "", title, flags=re.IGNORECASE)
         title = re.sub(rf"\s+{re.escape(suffix)}$", "", title, flags=re.IGNORECASE)
     return title.strip(" -|")
+
+
+def clean_linkedin_location(raw_location: str) -> str:
+    location = strip_html(raw_location).strip()
+    if not location:
+        return ""
+
+    cleaned = location
+    for pattern in LINKEDIN_LOCATION_NOISE_PATTERNS:
+        cleaned = re.sub(pattern, " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" -|,")
+    return cleaned
+
+
+def clean_linkedin_summary(raw_summary: str) -> str:
+    summary = strip_html(raw_summary).strip()
+    if not summary:
+        return ""
+
+    cleaned = summary
+    for pattern in LINKEDIN_SUMMARY_NOISE_PATTERNS:
+        cleaned = re.sub(pattern, " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" -|,")
+    return cleaned
 
 
 def normalize_company_name(value: str) -> str:
@@ -806,6 +868,11 @@ def has_weak_ai_context_signal(job: JobPosting) -> bool:
         ]
     ).lower()
     return any(re.search(pattern, haystack) for pattern in WEAK_AI_CONTEXT_PATTERNS)
+
+
+def has_strong_ai_title_signal(job: JobPosting) -> bool:
+    title = normalize_job_title(job.title)
+    return any(re.search(pattern, title) for pattern in AI_CONTEXT_PATTERNS)
 
 
 def is_generic_pm_without_ai_context(job: JobPosting) -> bool:
@@ -961,13 +1028,33 @@ def is_target_company(job: JobPosting) -> bool:
     return normalize_company_name(job.company) in allowlist
 
 
+def passes_linkedin_summary_quality_gate(job: JobPosting) -> bool:
+    source_type = (job.source_type or "").strip().lower()
+    if source_type != "linkedin_json":
+        return True
+    if strip_html(job.summary or "").strip():
+        return True
+    if has_strong_ai_title_signal(job):
+        return True
+    return False
+
+
 def should_keep_job(job: JobPosting) -> bool:
     review_decision = get_review_decision(job)
     if review_decision == "drop":
         return False
     if review_decision in {"keep", "watch"}:
-        return is_target_location(job) and is_target_company(job)
-    return is_target_job(job) and is_target_location(job) and is_target_company(job)
+        return (
+            passes_linkedin_summary_quality_gate(job)
+            and is_target_location(job)
+            and is_target_company(job)
+        )
+    return (
+        passes_linkedin_summary_quality_gate(job)
+        and is_target_job(job)
+        and is_target_location(job)
+        and is_target_company(job)
+    )
 
 
 def fetch_rss_source(source: dict[str, Any], session: requests.Session, cutoff: datetime) -> list[JobPosting]:
@@ -1197,8 +1284,8 @@ def fetch_linkedin_json_source(source: dict[str, Any], cutoff: datetime) -> list
 
         title = clean_title(str(entry.get("title") or "Untitled"))
         company = strip_html(str(entry.get("company") or "")).strip()
-        location = strip_html(str(entry.get("location") or "")).strip()
-        summary = strip_html(str(entry.get("summary") or "")).strip()
+        location = clean_linkedin_location(str(entry.get("location") or ""))
+        summary = clean_linkedin_summary(str(entry.get("summary") or ""))
         link = canonicalize_url(str(entry.get("link") or ""))
         if not link:
             continue
@@ -1859,8 +1946,8 @@ def chunk_text(value: str, limit: int = 1900) -> list[dict[str, Any]]:
     return [{"type": "text", "text": {"content": chunk}} for chunk in chunks]
 
 
-def to_notion_properties(job: JobPosting) -> dict[str, Any]:
-    return {
+def to_notion_properties(job: JobPosting, *, include_status: bool = True) -> dict[str, Any]:
+    properties = {
         "Title": {"title": chunk_text(job.title, limit=1800)},
         "Company": {"rich_text": chunk_text(job.company)},
         "Location": {"rich_text": chunk_text(job.location)},
@@ -1874,8 +1961,10 @@ def to_notion_properties(job: JobPosting) -> dict[str, Any]:
         "Mentions AI Native": {"select": {"name": "Yes" if job.mentions_ai_native else "No"}},
         "Relevance Score": {"number": round(float(job.relevance_score or 0.0), 2)},
         "Keywords": {"rich_text": chunk_text(build_keywords(job))},
-        "Status": {"select": {"name": "New"}},
     }
+    if include_status:
+        properties["Status"] = {"select": {"name": "New"}}
+    return properties
 
 
 class NotionDatabaseClient:
@@ -1975,12 +2064,13 @@ def sync_to_notion(jobs: list[JobPosting], dry_run: bool) -> tuple[int, int]:
     created = 0
     updated = 0
     for job in jobs:
-        properties = to_notion_properties(job)
         existing = existing_by_link.get(job.link)
         if existing:
+            properties = to_notion_properties(job, include_status=False)
             client.update_page(existing["id"], properties)
             updated += 1
         else:
+            properties = to_notion_properties(job, include_status=True)
             client.create_page(properties)
             created += 1
     return created, updated

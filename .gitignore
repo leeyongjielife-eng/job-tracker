@@ -8,3 +8,5 @@ token.json
 data/*.json
 data/*.html
 data/*.log
+.browser-profile/
+logs/launcher/

@@ -31,9 +31,9 @@ if ! curl --noproxy '*' --silent --fail "${REMOTE_DEBUGGING_URL}/json/version" >
   echo "Chrome debug session not detected. Launching dedicated Chrome profile..."
 
   if [ -n "$CHROME_EXECUTABLE" ]; then
-    open -na "$CHROME_APP_PATH" --args \
+    "$CHROME_EXECUTABLE" \
       --remote-debugging-port="$REMOTE_DEBUGGING_PORT" \
-      --user-data-dir="$CHROME_PROFILE_DIR"
+      --user-data-dir="$CHROME_PROFILE_DIR" >/dev/null 2>&1 &
   else
     open -na "$CHROME_APP_PATH" --args \
       --remote-debugging-port="$REMOTE_DEBUGGING_PORT" \

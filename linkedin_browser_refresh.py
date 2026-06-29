@@ -475,11 +475,17 @@ def main() -> int:
         if browser is not None:
             browser.close()
 
-    if args.refresh_bundle:
-        run_refresh_bundle()
+    if failed_tasks:
+        print(
+            "LinkedIn refresh finished with task failures. Skipping refresh_bundle/git_push to avoid mixing stale exports.",
+            file=sys.stderr,
+        )
+    else:
+        if args.refresh_bundle:
+            run_refresh_bundle()
 
-    if args.git_push:
-        git_push_changes(args.commit_message)
+        if args.git_push:
+            git_push_changes(args.commit_message)
 
     print(
         json.dumps(
@@ -493,6 +499,8 @@ def main() -> int:
             ensure_ascii=False,
         )
     )
+    if failed_tasks:
+        return 1
     return 0
 
 

@@ -61,7 +61,7 @@ python linkedin_browser_refresh.py --refresh-bundle
 它们分别对应：
 
 - `run_linkedin_refresh.command`：推荐主流程。只刷新 LinkedIn 搜索数据，后续交给 GitHub Actions。
-- `run_full_weekly_update.command`：本机直接继续执行 `job_tracker.py`。适合临时手动全链路验证，不是默认推荐流程。
+- `run_full_weekly_update.command`：本机直接继续执行 `job_tracker.py` 并尝试真实分析 / 同步。适合临时手动正式补跑，不是默认推荐流程，也不等同于 dry-run 验证。
 
 这两个按钮都会先尝试自动打开专用 Chrome profile，再开始执行后续步骤。
 
@@ -80,14 +80,14 @@ python3 job_tracker.py
 当前默认行为：
 
 - GitHub Actions 每周运行默认扫描最近 `7` 天发布的岗位
-- `60` 天窗口保留给首次回填或手动补跑
+- `60` 天窗口只用于首次建池或手动 backfill
 - 因为同步到 Notion / 后续数据库时按 `Link` 去重且不会删除旧记录，所以周跑会在原有岗位库基础上补最近一周的新岗位
 
 当前默认策略：
 
-- `LinkedIn Middle Layer` 作为主数据层
-- `Greenhouse / Lever / 官网` 默认不自动混入
-- 如需重新打开补充源，设置 `JOB_TRACKER_INCLUDE_SUPPLEMENTAL_SOURCES=1`
+- 项目默认只使用 `LinkedIn Middle Layer`
+- `Greenhouse / Lever / 官网` 不再作为自动兜底来源
+- 只有你明确打开 `JOB_TRACKER_INCLUDE_SUPPLEMENTAL_SOURCES=1` 时，才会临时混入补充源
 
 手动指定滚动窗口：
 
@@ -97,8 +97,8 @@ python3 job_tracker.py --lookback-days 60
 
 当前更推荐这样理解时间窗口：
 
-- `7 天`：当前 GitHub 周跑默认发布窗口
-- `60 天`：首次回填或手动补跑窗口
+- `7 天`：当前默认周跑窗口
+- `60 天`：首次建池或手动 backfill 窗口
 - `每周一次`：更新频率；周跑会在已有岗位库基础上补最近 7 天新增岗位
 
 只抓取和去重，不调用 LLM 分析，也不写 Notion：

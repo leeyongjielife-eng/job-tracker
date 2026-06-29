@@ -48,6 +48,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Refresh LinkedIn middle layer
+        run: python linkedin_ingest.py --mode refresh_bundle
+
       - name: Run job tracker
         env:
           LOOKBACK_DAYS: ${{ inputs.lookback_days || '7' }}
